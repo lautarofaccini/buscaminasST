@@ -1,0 +1,79 @@
+OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T19:10:43.224-03:00' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : 'Buscaminas new '
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T23:09:13.666-03:00' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : 'Transcript show: '
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T23:09:37.637-03:00' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : '(Color class organization listAtCategoryNamed: \'named colors\') \r   asSortedCollection do: \r   [ :colorName | Transcript show: \'- \', colorName  ; cr]'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T23:10:32.695-03:00' ],
+		#self : OmReference [ '4' ]
+	},
+	#content : '(Color class organization listAtCategoryNamed: \'named colors\')asSortedCollection do: [ :colorName | Transcript show: \'-\', colorName  ; cr]'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T23:11:21.001-03:00' ],
+		#self : OmReference [ '5' ]
+	},
+	#content : 'Transcript show: \'-\', black  ; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T23:12:43.534-03:00' ],
+		#self : OmReference [ '6' ]
+	},
+	#content : 'Buscaminas new'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T23:58:15.407-03:00' ],
+		#self : OmReference [ '7' ]
+	},
+	#content : '| celdas |\rceldas:= Array2D new: 5 tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\t'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T23:58:45.379-03:00' ],
+		#self : OmReference [ '8' ]
+	},
+	#content : '| celdas |\rceldas:= Array2D new: 5 tabulate: [ :i :j | \r\tTranscript show: \'es\',i, \' y \', j  ].\r\t'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T23:59:01.304-03:00' ],
+		#self : OmReference [ '9' ]
+	},
+	#content : '| celdas |\rceldas:= Array2D new: 5 tabulate: [ :i :j | \r\tTranscript show:( \'es\',i, \' y \', j  )].\r\t'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T23:59:29.258-03:00' ],
+		#self : OmReference [ '10' ]
+	},
+	#content : '| celdas |\rceldas:= Array2D new: 5 tabulate: [ :i :j | \r\tTranscript show:( \'es\',(i)asString, \' y \', (j)asString)].\r\t'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T00:00:32.784-03:00' ],
+		#self : OmReference [ '11' ]
+	},
+	#content : 'Buscaminas new'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T00:03:02.137-03:00' ],
+		#self : OmReference [ '12' ]
+	},
+	#content : 'Transcript show: (10 atRandom)asString'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T00:03:31.808-03:00' ],
+		#self : OmReference [ '13' ]
+	},
+	#content : 'Buscaminas new'
+}

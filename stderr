@@ -1,0 +1,1709 @@
+[31mNonBooleanReceiver: proceed for truth.
+[0mByteString(ProtoObject)>>mustBeBooleanIn:
+ByteString(ProtoObject)>>mustBeBoolean
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+HandMorph>>sendEvent:focus:clear:
+HandMorph>>sendMouseEvent:
+HandMorph>>handleEvent:
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mByteString(ProtoObject)>>mustBeBooleanIn:
+ByteString(ProtoObject)>>mustBeBoolean
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+HandMorph>>sendEvent:focus:clear:
+HandMorph>>sendMouseEvent:
+HandMorph>>handleEvent:
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mByteString(ProtoObject)>>mustBeBooleanIn:
+ByteString(ProtoObject)>>mustBeBoolean
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+HandMorph>>sendEvent:focus:clear:
+HandMorph>>sendMouseEvent:
+HandMorph>>handleEvent:
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mByteString(ProtoObject)>>mustBeBooleanIn:
+ByteString(ProtoObject)>>mustBeBoolean
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+HandMorph>>sendEvent:focus:clear:
+HandMorph>>sendMouseEvent:
+HandMorph>>handleEvent:
+[0m[31mError: index out of range
+[0mPanelMorph(Object)>>error:
+PanelMorph(Morph)>>privateAddMorph:atIndex:
+PanelMorph(Morph)>>replaceSubmorph:by:
+ClyNotebookMorph(SpNotebookMorph)>>updateContentMorph:with:
+ClyNotebookMorph(SpNotebookMorph)>>updatePageIndex:
+ClyNotebookMorph(TabGroupMorph)>>update:with:
+MorphChangedWithArguments>>deliverTo:
+ClyNotebookMorph(Morph)>>handleUpdate:
+MessageSend>>value:
+MessageSend>>cull:
+MessageSend>>cull:cull:
+[action cull: anAnnouncement cull: announcer] in AnnouncementSubscription>>deliver: in Block: [action cull: anAnnouncement cull: announcer]
+FullBlockClosure(BlockClosure)>>on:do:
+[ Processor terminateRealActive ] in [ :ex |
+			  | onDoCtx handler bottom thisCtx |
+			  onDoCtx := thisContext.
+			  thisCtx := onDoCtx home.
+
+			  "find the context on stack for which this method's is sender"
+
+			  [ onDoCtx sender == thisCtx ] whileFalse: [
+				  onDoCtx := onDoCtx sender.
+				  onDoCtx ifNil: [ "Can't find our home context. seems like we're already forked
+				and handling another exception in new thread. In this case, just pass it through handler."
+					  ^ handlerAction cull: ex ] ].
+
+			  bottom := [ Processor terminateRealActive ] asContext.
+			  onDoCtx privSender: bottom.
+
+			  handler := [ handlerAction cull: ex ] asContext.
+			  handler privSender: thisContext sender.
+
+			  (Process forContext: handler priority: Processor activePriority) resume.
+
+			  "cut the stack of current process"
+			  thisContext privSender: thisCtx.
+			  nil ] in FullBlockClosure(BlockClosure)>>on:fork: in Block: [ Processor terminateRealActive ]
+[0m[31mError: index out of range
+[0mPanelMorph(Object)>>error:
+PanelMorph(Morph)>>privateAddMorph:atIndex:
+PanelMorph(Morph)>>replaceSubmorph:by:
+ClyNotebookMorph(SpNotebookMorph)>>updateContentMorph:with:
+ClyNotebookMorph(SpNotebookMorph)>>updatePageIndex:
+ClyNotebookMorph(TabGroupMorph)>>update:with:
+MorphChangedWithArguments>>deliverTo:
+ClyNotebookMorph(Morph)>>handleUpdate:
+MessageSend>>value:
+MessageSend>>cull:
+MessageSend>>cull:cull:
+[action cull: anAnnouncement cull: announcer] in AnnouncementSubscription>>deliver: in Block: [action cull: anAnnouncement cull: announcer]
+FullBlockClosure(BlockClosure)>>on:do:
+[ Processor terminateRealActive ] in [ :ex |
+			  | onDoCtx handler bottom thisCtx |
+			  onDoCtx := thisContext.
+			  thisCtx := onDoCtx home.
+
+			  "find the context on stack for which this method's is sender"
+
+			  [ onDoCtx sender == thisCtx ] whileFalse: [
+				  onDoCtx := onDoCtx sender.
+				  onDoCtx ifNil: [ "Can't find our home context. seems like we're already forked
+				and handling another exception in new thread. In this case, just pass it through handler."
+					  ^ handlerAction cull: ex ] ].
+
+			  bottom := [ Processor terminateRealActive ] asContext.
+			  onDoCtx privSender: bottom.
+
+			  handler := [ handlerAction cull: ex ] asContext.
+			  handler privSender: thisContext sender.
+
+			  (Process forContext: handler priority: Processor activePriority) resume.
+
+			  "cut the stack of current process"
+			  thisContext privSender: thisCtx.
+			  nil ] in FullBlockClosure(BlockClosure)>>on:fork: in Block: [ Processor terminateRealActive ]
+[0m[31mError: Instances of UndefinedObject are not indexable
+[0mUndefinedObject(Object)>>error:
+UndefinedObject(Object)>>errorNotIndexable
+UndefinedObject(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+[0m[31mError: Instances of UndefinedObject are not indexable
+[0mUndefinedObject(Object)>>error:
+UndefinedObject(Object)>>errorNotIndexable
+UndefinedObject(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+[0m[31mError: Instances of UndefinedObject are not indexable
+[0mUndefinedObject(Object)>>error:
+UndefinedObject(Object)>>errorNotIndexable
+UndefinedObject(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+[0m[31mError: Instances of UndefinedObject are not indexable
+[0mUndefinedObject(Object)>>error:
+UndefinedObject(Object)>>errorNotIndexable
+UndefinedObject(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+[0m[31mError: Instances of UndefinedObject are not indexable
+[0mUndefinedObject(Object)>>error:
+UndefinedObject(Object)>>errorNotIndexable
+UndefinedObject(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+[0m[31mError: Instances of UndefinedObject are not indexable
+[0mUndefinedObject(Object)>>error:
+UndefinedObject(Object)>>errorNotIndexable
+UndefinedObject(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+[0m[31m#, was sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #,
+UndefinedObject>>doesNotUnderstand: #,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+[0m[31m#, was sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #,
+UndefinedObject>>doesNotUnderstand: #,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+[0m[31m#, was sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #,
+UndefinedObject>>doesNotUnderstand: #,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+[0m[31m#, was sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #,
+UndefinedObject>>doesNotUnderstand: #,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+[0m[31m#, was sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #,
+UndefinedObject>>doesNotUnderstand: #,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+[0m[31m#, was sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #,
+UndefinedObject>>doesNotUnderstand: #,
+Celda>>initialize
+Celda class(Behavior)>>new
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+[0m[31mError: Instances of SmallInteger are not indexable
+[0mSmallInteger(Object)>>error:
+SmallInteger(Object)>>errorNotIndexable
+SmallInteger(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+[ :i :j | 
+	Transcript show: 'es',i, ' y ', j  ] in UndefinedObject>>DoIt in Block: [ :i :j | ...
+Array2D class>>rows:columns:tabulate:
+Array2D class>>new:tabulate:
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+[0m[31mError: Instances of SmallInteger are not indexable
+[0mSmallInteger(Object)>>error:
+SmallInteger(Object)>>errorNotIndexable
+SmallInteger(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+[ :i :j | 
+	Transcript show: 'es',i, ' y ', j  ] in UndefinedObject>>DoIt in Block: [ :i :j | ...
+Array2D class>>rows:columns:tabulate:
+Array2D class>>new:tabulate:
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+[0m[31mError: Instances of SmallInteger are not indexable
+[0mSmallInteger(Object)>>error:
+SmallInteger(Object)>>errorNotIndexable
+SmallInteger(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+[ :i :j | 
+	Transcript show:( 'es',i, ' y ', j  )] in UndefinedObject>>DoIt in Block: [ :i :j | ...
+Array2D class>>rows:columns:tabulate:
+Array2D class>>new:tabulate:
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+[0m[31mError: Instances of SmallInteger are not indexable
+[0mSmallInteger(Object)>>error:
+SmallInteger(Object)>>errorNotIndexable
+SmallInteger(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+[ :i :j | 
+	Transcript show:( 'es',i, ' y ', j  )] in UndefinedObject>>DoIt in Block: [ :i :j | ...
+Array2D class>>rows:columns:tabulate:
+Array2D class>>new:tabulate:
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
+UndefinedObject(ProtoObject)>>mustBeBoolean
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
+UndefinedObject(ProtoObject)>>mustBeBoolean
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
+UndefinedObject(ProtoObject)>>mustBeBoolean
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
+UndefinedObject(ProtoObject)>>mustBeBoolean
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
+UndefinedObject(ProtoObject)>>mustBeBoolean
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
+UndefinedObject(ProtoObject)>>mustBeBoolean
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
+UndefinedObject(ProtoObject)>>mustBeBoolean
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
+UndefinedObject(ProtoObject)>>mustBeBoolean
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+[0m

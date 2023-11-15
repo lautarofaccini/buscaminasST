@@ -1,0 +1,1 @@
+Transcript show:(10 atRandom)asString

@@ -1,0 +1,7 @@
+OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-14T15:55:20.47-03:00' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : '|input |\r[input := (UIManager default request:\'Dame algo\')asString]whileTrue:[ input = \'.\']'
+}

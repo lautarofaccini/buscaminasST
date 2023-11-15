@@ -1,0 +1,1 @@
+|input |[input := (UIManager default request:'Dame algo')asString]whileTrue:[ input = '.']
