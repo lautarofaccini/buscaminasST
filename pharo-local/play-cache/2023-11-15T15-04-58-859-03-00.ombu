@@ -1,0 +1,61 @@
+OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:06:51.35-03:00' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : '| minas i j |\rminas := OrderedCollection new.\r\r5 timesRepeat: [ \r\ti:= (UIManager default request: \'dame i\')asInteger.\r\tj:= (UIManager default request: \'dame j\')asInteger.\r\tminas := #(i j)\r \t].\rTranscript show: (minas)asString'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:08:22.766-03:00' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : '| minas i j |\rminas := OrderedCollection new.\r\r5 timesRepeat: [ \r\ti:= (UIManager default request: \'dame i\')asInteger.\r\tj:= (UIManager default request: \'dame j\')asInteger.\r\tminas addLast: #(i j).\r \t].\rTranscript show: (minas)asString'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:10:02.925-03:00' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : '| minas i j mini |\rminas := OrderedCollection new.\r\r5 timesRepeat: [ \r\ti:= (UIManager default request: \'dame i\')asInteger.\r\tj:= (UIManager default request: \'dame j\')asInteger.\r\tmini := Array new: 2.\r\tmini\r\tminas addLast: mini.\r \t].\rTranscript show: (minas)asString'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:10:28.679-03:00' ],
+		#self : OmReference [ '4' ]
+	},
+	#content : '| minas i j mini |\rminas := OrderedCollection new.\r\r5 timesRepeat: [ \r\ti:= (UIManager default request: \'dame i\')asInteger.\r\tj:= (UIManager default request: \'dame j\')asInteger.\r\tmini := Array new: 2.\r\tmini at: 1 put: i.\r\tmini at: 2 put: j.\r\tminas addLast: mini.\r \t].\rTranscript show: (minas)asString'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:12:28.472-03:00' ],
+		#self : OmReference [ '5' ]
+	},
+	#content : '| minas i j mini |\rminas := OrderedCollection new.\r\r5 timesRepeat: [ \r\ti:= (UIManager default request: \'dame i\')asInteger.\r\tj:= (UIManager default request: \'dame j\')asInteger.\r\tmini := Array new: 2.\r\tmini at: 1 put: i.\r\tmini at: 2 put: j.\r\tminas addLast: mini.\r \t].\rTranscript show: (minas)asString\rTranscript show: ((((minas at: 1)at: 1), \', \', ((minas at: 1)at: 2))asString.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:12:45.815-03:00' ],
+		#self : OmReference [ '6' ]
+	},
+	#content : '| minas i j mini |\rminas := OrderedCollection new.\r\r5 timesRepeat: [ \r\ti:= (UIManager default request: \'dame i\')asInteger.\r\tj:= (UIManager default request: \'dame j\')asInteger.\r\tmini := Array new: 2.\r\tmini at: 1 put: i.\r\tmini at: 2 put: j.\r\tminas addLast: mini.\r \t].\rTranscript show: (minas)asString\rTranscript show: (((minas at: 1)at: 1), \', \', ((minas at: 1)at: 2))asString.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:13:09.286-03:00' ],
+		#self : OmReference [ '7' ]
+	},
+	#content : '| minas i j mini |\rminas := OrderedCollection new.\r\r5 timesRepeat: [ \r\ti:= (UIManager default request: \'dame i\')asInteger.\r\tj:= (UIManager default request: \'dame j\')asInteger.\r\tmini := Array new: 2.\r\tmini at: 1 put: i.\r\tmini at: 2 put: j.\r\tminas addLast: mini.\r \t].\rTranscript show: (minas)asString.\rTranscript show: (((minas at: 1)at: 1), \', \', ((minas at: 1)at: 2))asString.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:13:51.914-03:00' ],
+		#self : OmReference [ '8' ]
+	},
+	#content : '| minas i j mini |\rminas := OrderedCollection new.\r\r5 timesRepeat: [ \r\ti:= (UIManager default request: \'dame i\')asInteger.\r\tj:= (UIManager default request: \'dame j\')asInteger.\r\tmini := Array new: 2.\r\tmini at: 1 put: i.\r\tmini at: 2 put: j.\r\tminas addLast: mini.\r \t].\rTranscript show: (minas)asString.\rTranscript show: ((minas at: 1)at: 1)asString, \', \', ((minas at: 1)at: 2)asString.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:16:47.372-03:00' ],
+		#self : OmReference [ '9' ]
+	},
+	#content : '| minas i j mini |\rminas := OrderedCollection new.\r\r5 timesRepeat: [ \r\ti:= (UIManager default request: \'dame i\')asInteger.\r\tj:= (UIManager default request: \'dame j\')asInteger.\r\tmini := Array new: 2.\r\tmini at: 1 put: i.\r\tmini at: 2 put: j.\r\tminas addLast: mini.\r \t].\rTranscript show: (minas)asString.\rTranscript show: ((minas at: 1)at: 1)asString, \', \', ((minas at: 1)at: 2)asString.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T15:19:53.027-03:00' ],
+		#self : OmReference [ '10' ]
+	},
+	#content : 'Buscaminas new'
+}

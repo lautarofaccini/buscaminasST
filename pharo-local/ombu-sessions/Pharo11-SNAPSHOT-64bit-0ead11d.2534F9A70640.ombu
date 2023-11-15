@@ -240,4 +240,3538 @@ OmEntry {
 	#content : EpSessionSnapshot {
 		#imageName : 'C:\\Users\\Usuario\\Documents\\Pharo\\images\\Buscaminas\\Buscaminas.image'
 	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:15:45.555-03:00' ],
+		#prior : OmReference [ '6' ],
+		#self : OmReference [ '7' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\t\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tself mapearMinas: cantMinas.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 11:27',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tminas := OrderedCollection new.\r\tself mapearMinas: cantMinas.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 15:15',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:15:51.34-03:00' ],
+		#prior : OmReference [ '7' ],
+		#self : OmReference [ '8' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j |\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\t\t\ti:= (tamaño atRandom).\r\t\t\tj:= (tamaño atRandom).\r\t\t\t[((celdas at: i at: j) tieneMina)] whileTrue: [ \r\t\t\t\ti:= (tamaño atRandom).\r\t\t\t\tj:= (tamaño atRandom).\r\t\t\t\t ].\r\t\t\t(celdas at: i at: j) ponerMina.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 00:14',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j posicion|\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\ti:= (tamaño atRandom).\r\tj:= (tamaño atRandom).\r\t[((celdas at: i at: j) tieneMina)] whileTrue: [ \r\t\ti:= (tamaño atRandom).\r\t\tj:= (tamaño atRandom).\r\t].\r\t(celdas at: i at: j) ponerMina.\r\tposicion := Array new: 2.\r\tposicion at: 1 put: i.\r\tposicion at: 2 put: j.\r\tminas addLast: posicion.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 15:15',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:19:19.896-03:00' ],
+		#prior : OmReference [ '8' ],
+		#self : OmReference [ '9' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'verificar:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'verificar:i at:j\r\t^\'hola\', i, \', \', j. ',
+			#stamp : 'LautaroFaccini 11/14/2023 23:43',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'verificar:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'verificar:i at:j\r\t (celdas at: i - 1 at: j) toggleState\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:19',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:21:16.392-03:00' ],
+		#prior : OmReference [ '9' ],
+		#self : OmReference [ '10' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseUp: anEvent\r\tself toggleState.\r\tonClick value ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:21',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:21:16.399-03:00' ],
+		#prior : OmReference [ '10' ],
+		#self : OmReference [ '11' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseUp: anEvent\r\tself toggleState.\r\tonClick value ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:21',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tself toggleState.\r\tonClick value ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:21',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:21:41.105-03:00' ],
+		#prior : OmReference [ '11' ],
+		#self : OmReference [ '12' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tself toggleState.\r\tonClick value ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:21',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tself turnOff.\r\tonClick value ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:21',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:23:47.52-03:00' ],
+		#prior : OmReference [ '12' ],
+		#self : OmReference [ '13' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'verificar:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'verificar:i at:j\r\t (celdas at: i - 1 at: j) toggleState\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:19',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'verificar:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'verificar:i at:j\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:23',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:35:33.843-03:00' ],
+		#prior : OmReference [ '13' ],
+		#self : OmReference [ '14' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'SimpleSwitchMorph',
+				#definitionSource : 'SimpleSwitchMorph subclass: #Celda\r\tinstanceVariableNames: \'onClick tieneMina\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Celda,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onClick,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #tieneMina,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Celda class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Celda class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Celda,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'SimpleSwitchMorph',
+				#definitionSource : 'SimpleSwitchMorph subclass: #Celda\r\tinstanceVariableNames: \'onClick onRightClick onLeftClick tieneMina\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Celda,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onClick,
+					#parent : @25
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onRightClick,
+					#parent : @25
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onLeftClick,
+					#parent : @25
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #tieneMina,
+					#parent : @25
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Celda class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Celda class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @25
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Celda,
+					#isMetaSide : false
+				},
+				#parent : @25,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:35:47.465-03:00' ],
+		#prior : OmReference [ '14' ],
+		#self : OmReference [ '15' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tself turnOff.\r\tonClick value ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:21',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ onRightClick value ].\r\tanEvent yellowButtonPressed \r\t\tifTrue: [ onLeftClick value].',
+			#stamp : 'LautaroFaccini 11/15/2023 15:35',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:37:57.418-03:00' ],
+		#prior : OmReference [ '15' ],
+		#self : OmReference [ '16' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'onLeftClick:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'onLeftClick: aBlock\ronLeftClick:= aBlock',
+			#stamp : 'LautaroFaccini 11/15/2023 15:37',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:37:57.425-03:00' ],
+		#prior : OmReference [ '16' ],
+		#self : OmReference [ '17' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'onLeftClick:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'onLeftClick: aBlock\ronLeftClick:= aBlock',
+			#stamp : 'LautaroFaccini 11/15/2023 15:37',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'onLeftClick:',
+			#protocol : #accessing,
+			#sourceCode : 'onLeftClick: aBlock\ronLeftClick:= aBlock',
+			#stamp : 'LautaroFaccini 11/15/2023 15:37',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:38:13.406-03:00' ],
+		#prior : OmReference [ '17' ],
+		#self : OmReference [ '18' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'onRightClick:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'onRightClick: aBlock\ronRightClick:= aBlock',
+			#stamp : 'LautaroFaccini 11/15/2023 15:38',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:38:13.413-03:00' ],
+		#prior : OmReference [ '18' ],
+		#self : OmReference [ '19' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'onRightClick:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'onRightClick: aBlock\ronRightClick:= aBlock',
+			#stamp : 'LautaroFaccini 11/15/2023 15:38',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'onRightClick:',
+			#protocol : #accessing,
+			#sourceCode : 'onRightClick: aBlock\ronRightClick:= aBlock',
+			#stamp : 'LautaroFaccini 11/15/2023 15:38',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:39:32.318-03:00' ],
+		#prior : OmReference [ '19' ],
+		#self : OmReference [ '20' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ onRightClick value ].\r\tanEvent yellowButtonPressed \r\t\tifTrue: [ onLeftClick value].',
+			#stamp : 'LautaroFaccini 11/15/2023 15:35',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ onRightClick value ]. "Click derecho"\r\tanEvent yellowButtonPressed \r\t\tifTrue: [ onLeftClick value]. "Click izquierdo"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:39',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:40:47.88-03:00' ],
+		#prior : OmReference [ '20' ],
+		#self : OmReference [ '21' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ onRightClick value ]. "Click derecho"\r\tanEvent yellowButtonPressed \r\t\tifTrue: [ onLeftClick value]. "Click izquierdo"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:39',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ \r\t\t\tself toggleState.\r\t\t\tonRightClick value \r\t\t\t ]. "Click derecho"\r\tanEvent yellowButtonPressed \r\t\tifTrue: [ \r\t\t\tself turnOff.\r\t\t\tonLeftClick value\r\t\t\t ]. "Click izquierdo"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:40',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:41:24.08-03:00' ],
+		#prior : OmReference [ '21' ],
+		#self : OmReference [ '22' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ \r\t\t\tself toggleState.\r\t\t\tonRightClick value \r\t\t\t ]. "Click derecho"\r\tanEvent yellowButtonPressed \r\t\tifTrue: [ \r\t\t\tself turnOff.\r\t\t\tonLeftClick value\r\t\t\t ]. "Click izquierdo"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:40',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ \r\t\t\tself toggleState.\r\t\t\tonRightClick value \r\t\t\t ] ifFalse: [ \r\t\t\tself turnOff.\r\t\t\tonLeftClick value\r\t\t\t ]. "Click izquierdo"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:41:43.023-03:00' ],
+		#prior : OmReference [ '22' ],
+		#self : OmReference [ '23' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ \r\t\t\tself toggleState.\r\t\t\tonRightClick value \r\t\t\t ] ifFalse: [ \r\t\t\tself turnOff.\r\t\t\tonLeftClick value\r\t\t\t ]. "Click izquierdo"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ "Click derecho"\r\t\t\tself toggleState.\r\t\t\tonRightClick value \r\t\t\t ] ifFalse: [ "Click izquierdo"\r\t\t\tself turnOff.\r\t\t\tonLeftClick value\r\t\t\t ]. ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:41:47.503-03:00' ],
+		#prior : OmReference [ '23' ],
+		#self : OmReference [ '24' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onClick: [ self verificar: i at: j ].\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 11:29',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self verificar: i at: j ].\r\tcelda onLeftClick: [ self verificar: i at: j ].\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:41:52.036-03:00' ],
+		#prior : OmReference [ '24' ],
+		#self : OmReference [ '25' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'verificar:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'verificar:i at:j\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:23',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'verificar:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'verificar:i at:j\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:45:13.198-03:00' ],
+		#prior : OmReference [ '25' ],
+		#self : OmReference [ '26' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'onClick:',
+			#protocol : #accessing,
+			#sourceCode : 'onClick: aBlock\r\tonClick := aBlock',
+			#stamp : 'LautaroFaccini 11/14/2023 19:00',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'onClick:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'onClick: aBlock\r\tonClick := aBlock',
+			#stamp : 'LautaroFaccini 11/14/2023 19:00',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:45:13.253-03:00' ],
+		#prior : OmReference [ '26' ],
+		#self : OmReference [ '27' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'onClick:',
+			#protocol : #accessing,
+			#sourceCode : 'onClick: aBlock\r\tonClick := aBlock',
+			#stamp : 'LautaroFaccini 11/14/2023 19:00',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:45:18.017-03:00' ],
+		#prior : OmReference [ '27' ],
+		#self : OmReference [ '28' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'SimpleSwitchMorph',
+				#definitionSource : 'SimpleSwitchMorph subclass: #Celda\r\tinstanceVariableNames: \'onClick onRightClick onLeftClick tieneMina\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Celda,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onClick,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onRightClick,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onLeftClick,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #tieneMina,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Celda class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Celda class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Celda,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'SimpleSwitchMorph',
+				#definitionSource : 'SimpleSwitchMorph subclass: #Celda\r\tinstanceVariableNames: \'onRightClick onLeftClick tieneMina\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Celda,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onRightClick,
+					#parent : @29
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onLeftClick,
+					#parent : @29
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #tieneMina,
+					#parent : @29
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Celda class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Celda class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @29
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Celda,
+					#isMetaSide : false
+				},
+				#parent : @29,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:46:59.228-03:00' ],
+		#prior : OmReference [ '28' ],
+		#self : OmReference [ '29' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ "Click derecho"\r\t\t\tself toggleState.\r\t\t\tonRightClick value \r\t\t\t ] ifFalse: [ "Click izquierdo"\r\t\t\tself turnOff.\r\t\t\tonLeftClick value\r\t\t\t ]. ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ "Click derecho"\r\t\t\tonRightClick value \r\t\t\t ] ifFalse: [ "Click izquierdo"\r\t\t\tonLeftClick value\r\t\t\t ]. ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:46',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:47:38.747-03:00' ],
+		#prior : OmReference [ '29' ],
+		#self : OmReference [ '30' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self verificar: i at: j ].\r\tcelda onLeftClick: [ self verificar: i at: j ].\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleState].\r\tcelda onLeftClick: [ self verificar: i at: j ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:47',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:47:45.103-03:00' ],
+		#prior : OmReference [ '30' ],
+		#self : OmReference [ '31' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleState].\r\tcelda onLeftClick: [ self verificar: i at: j ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:47',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleState].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:47',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:47:50.053-03:00' ],
+		#prior : OmReference [ '31' ],
+		#self : OmReference [ '32' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleState].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:47',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda turnOn].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:47',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:47:51.32-03:00' ],
+		#prior : OmReference [ '32' ],
+		#self : OmReference [ '33' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda turnOn].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:47',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda turnOn ].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:47',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:50:41.032-03:00' ],
+		#prior : OmReference [ '33' ],
+		#self : OmReference [ '34' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseDown: anEvent                  "Evalua que sucede cuando se clickea el mouse, tanto para click izquierdo como derecho"\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. \r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .]',
+			#stamp : 'LautaroFaccini 11/15/2023 15:50',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:50:41.039-03:00' ],
+		#prior : OmReference [ '34' ],
+		#self : OmReference [ '35' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseDown: anEvent                  "Evalua que sucede cuando se clickea el mouse, tanto para click izquierdo como derecho"\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. \r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .]',
+			#stamp : 'LautaroFaccini 11/15/2023 15:50',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseDown: anEvent                  "Evalua que sucede cuando se clickea el mouse, tanto para click izquierdo como derecho"\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. \r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .]',
+			#stamp : 'LautaroFaccini 11/15/2023 15:50',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:51:33.983-03:00' ],
+		#prior : OmReference [ '35' ],
+		#self : OmReference [ '36' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\tanEvent redButtonPressed \r\t\tifTrue: [ "Click derecho"\r\t\t\tonRightClick value \r\t\t\t ] ifFalse: [ "Click izquierdo"\r\t\t\tonLeftClick value\r\t\t\t ]. ',
+			#stamp : 'LautaroFaccini 11/15/2023 15:46',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:52:01.592-03:00' ],
+		#prior : OmReference [ '36' ],
+		#self : OmReference [ '37' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseDown: anEvent                  "Evalua que sucede cuando se clickea el mouse, tanto para click izquierdo como derecho"\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. \r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .]',
+			#stamp : 'LautaroFaccini 11/15/2023 15:50',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseDown: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:53:47.793-03:00' ],
+		#prior : OmReference [ '37' ],
+		#self : OmReference [ '38' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #ponerBandera,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'ponerBandera\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:53',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:53:53.735-03:00' ],
+		#prior : OmReference [ '38' ],
+		#self : OmReference [ '39' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #ponerBandera,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'ponerBandera\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:53',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #ponerBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'ponerBandera\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:53',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:57:12.28-03:00' ],
+		#prior : OmReference [ '39' ],
+		#self : OmReference [ '40' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'ponerBandera:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'ponerBandera:i at: j\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:57',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:57:18.398-03:00' ],
+		#prior : OmReference [ '40' ],
+		#self : OmReference [ '41' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #ponerBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'ponerBandera\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:53',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #ponerBandera,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'ponerBandera\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:53',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:57:18.402-03:00' ],
+		#prior : OmReference [ '41' ],
+		#self : OmReference [ '42' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #ponerBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'ponerBandera\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:53',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:57:45.314-03:00' ],
+		#prior : OmReference [ '42' ],
+		#self : OmReference [ '43' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda turnOn ].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:47',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda ponerBandera:i at: j].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:57',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:58:09.368-03:00' ],
+		#prior : OmReference [ '43' ],
+		#self : OmReference [ '44' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda ponerBandera:i at: j].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:57',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:58',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:58:19.135-03:00' ],
+		#prior : OmReference [ '44' ],
+		#self : OmReference [ '45' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'toggleBandera:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera:i at: j\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:58',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:58:24.345-03:00' ],
+		#prior : OmReference [ '45' ],
+		#self : OmReference [ '46' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'ponerBandera:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'ponerBandera:i at: j\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:57',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'ponerBandera:at:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'ponerBandera:i at: j\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:57',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:58:24.408-03:00' ],
+		#prior : OmReference [ '46' ],
+		#self : OmReference [ '47' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'ponerBandera:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'ponerBandera:i at: j\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:57',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T15:59:26.206-03:00' ],
+		#prior : OmReference [ '47' ],
+		#self : OmReference [ '48' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'SimpleSwitchMorph',
+				#definitionSource : 'SimpleSwitchMorph subclass: #Celda\r\tinstanceVariableNames: \'onRightClick onLeftClick tieneMina\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Celda,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onRightClick,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onLeftClick,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #tieneMina,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Celda class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Celda class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Celda,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'SimpleSwitchMorph',
+				#definitionSource : 'SimpleSwitchMorph subclass: #Celda\r\tinstanceVariableNames: \'onRightClick onLeftClick tieneMina tieneBandera\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Celda,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onRightClick,
+					#parent : @27
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #onLeftClick,
+					#parent : @27
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #tieneMina,
+					#parent : @27
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Celda,
+						#isMetaSide : false
+					},
+					#name : #tieneBandera,
+					#parent : @27
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Celda class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Celda class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @27
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Celda,
+					#isMetaSide : false
+				},
+				#parent : @27,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:03:33.251-03:00' ],
+		#prior : OmReference [ '48' ],
+		#self : OmReference [ '49' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ celda turnOff ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 15:58',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ (celda state)ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:03',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:04:16.122-03:00' ],
+		#prior : OmReference [ '49' ],
+		#self : OmReference [ '50' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ (celda state)ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:03',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ (celda value)ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:04',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:05:01.644-03:00' ],
+		#prior : OmReference [ '50' ],
+		#self : OmReference [ '51' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ (celda value)ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:04',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ (celda statusValue )ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:05',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:14:05.822-03:00' ],
+		#prior : OmReference [ '51' ],
+		#self : OmReference [ '52' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ (celda statusValue )ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:05',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ (celda isOn )ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:14',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:18:25.642-03:00' ],
+		#prior : OmReference [ '52' ],
+		#self : OmReference [ '53' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'toggleBandera:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera:i at: j\r',
+			#stamp : 'LautaroFaccini 11/15/2023 15:58',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'toggleBandera:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera:i at: j\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\r\t].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:18',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:18:35.776-03:00' ],
+		#prior : OmReference [ '53' ],
+		#self : OmReference [ '54' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize\r\tsuper initialize. \r\tself label: \'\'. \r\tself borderWidth: 1.\r\tbounds := 0@0 corner: 40@40 . "tamaño de la celda"\r\tonColor := Color green .\r\toffColor := Color transparent .\r\tself turnOn.\r\ttieneMina:= false.',
+			#stamp : 'LautaroFaccini 11/15/2023 00:17',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize\r\tsuper initialize. \r\tself label: \'\'. \r\tself borderWidth: 1.\r\tbounds := 0@0 corner: 40@40 . "tamaño de la celda"\r\tonColor := Color green .\r\toffColor := Color transparent .\r\tself turnOn.\r\ttieneBandera:= false.\r\ttieneMina:= false.',
+			#stamp : 'LautaroFaccini 11/15/2023 16:18',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:19:56.73-03:00' ],
+		#prior : OmReference [ '54' ],
+		#self : OmReference [ '55' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\r\t].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:19',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:20:03.422-03:00' ],
+		#prior : OmReference [ '55' ],
+		#self : OmReference [ '56' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'toggleBandera:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera:i at: j\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\r\t].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:18',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'toggleBandera:at:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'toggleBandera:i at: j\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\r\t].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:18',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:20:03.427-03:00' ],
+		#prior : OmReference [ '56' ],
+		#self : OmReference [ '57' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'toggleBandera:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera:i at: j\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\r\t].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:18',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:20:22.375-03:00' ],
+		#prior : OmReference [ '57' ],
+		#self : OmReference [ '58' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera:i at: j].\r\tcelda onLeftClick: [ (celda isOn )ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:14',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera].\r\tcelda onLeftClick: [ (celda isOn )ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:20',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:21:34.704-03:00' ],
+		#prior : OmReference [ '58' ],
+		#self : OmReference [ '59' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera].\r\tcelda onLeftClick: [ (celda isOn )ifTrue:[ celda toggleState ].  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:20',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera].\r\tcelda onLeftClick: [  celda turnOff  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:21',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:22:29.351-03:00' ],
+		#prior : OmReference [ '59' ],
+		#self : OmReference [ '60' ]
+	},
+	#content : EpSessionSnapshot {
+		#imageName : 'C:\\Users\\Usuario\\Documents\\Pharo\\images\\Buscaminas\\Buscaminas.image'
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:23:33.916-03:00' ],
+		#prior : OmReference [ '60' ],
+		#self : OmReference [ '61' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera].\r\tcelda onLeftClick: [  celda turnOff  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:21',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda turnOn ].\r\tcelda onLeftClick: [  celda turnOff  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:23',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:24:14.099-03:00' ],
+		#prior : OmReference [ '61' ],
+		#self : OmReference [ '62' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda turnOn ].\r\tcelda onLeftClick: [  celda turnOff  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:23',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera ].\r\tcelda onLeftClick: [  celda turnOff  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:24',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:25:16.903-03:00' ],
+		#prior : OmReference [ '62' ],
+		#self : OmReference [ '63' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\r\t].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:19',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:25',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:25:39.594-03:00' ],
+		#prior : OmReference [ '63' ],
+		#self : OmReference [ '64' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:25',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\t\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:25',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:26:10.401-03:00' ],
+		#prior : OmReference [ '64' ],
+		#self : OmReference [ '65' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\t\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:25',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:26',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:26:45.33-03:00' ],
+		#prior : OmReference [ '65' ],
+		#self : OmReference [ '66' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:26',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\toffColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:26',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:27:28.975-03:00' ],
+		#prior : OmReference [ '66' ],
+		#self : OmReference [ '67' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\toffColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:26',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:27',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:27:41.626-03:00' ],
+		#prior : OmReference [ '67' ],
+		#self : OmReference [ '68' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:27',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOff.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:27',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:27:46.237-03:00' ],
+		#prior : OmReference [ '68' ],
+		#self : OmReference [ '69' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifFalse:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOff.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:27',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOff.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:27',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:28:09.74-03:00' ],
+		#prior : OmReference [ '69' ],
+		#self : OmReference [ '70' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOff.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:27',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:28',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:28:23.317-03:00' ],
+		#prior : OmReference [ '70' ],
+		#self : OmReference [ '71' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifFalse: [ \r\t\tself turnOn.\r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:28',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:28',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:29:54.357-03:00' ],
+		#prior : OmReference [ '71' ],
+		#self : OmReference [ '72' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:28',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\tself turnOn.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:29',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:30:10.62-03:00' ],
+		#prior : OmReference [ '72' ],
+		#self : OmReference [ '73' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\tself turnOn.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:29',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\tself turnOn.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself turnOn.\r\t\tonColor:= Color blue.\t\r\t\tself turnOff.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:30',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:31:03.29-03:00' ],
+		#prior : OmReference [ '73' ],
+		#self : OmReference [ '74' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\tself turnOn.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself turnOn.\r\t\tonColor:= Color blue.\t\r\t\tself turnOff.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:30',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\tself turnOn.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself turnOff.\r\t\tonColor:= Color blue.\t\r\t\tself turnOn.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:31',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:31:36.706-03:00' ],
+		#prior : OmReference [ '74' ],
+		#self : OmReference [ '75' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\tself turnOn.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself turnOff.\r\t\tonColor:= Color blue.\t\r\t\tself turnOn.\r\t\t ].\r\t\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:31',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself turnOff.\r\t\tonColor:= Color blue.\t\r\t\t\r\t\t ].\r\t\tself turnOn.\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:31',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:32:05.614-03:00' ],
+		#prior : OmReference [ '75' ],
+		#self : OmReference [ '76' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself turnOff.\r\t\tonColor:= Color blue.\t\r\t\t\r\t\t ].\r\t\tself turnOn.\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:31',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\tself turnOff.\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\tself turnOn.\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:32',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:33:42.336-03:00' ],
+		#prior : OmReference [ '76' ],
+		#self : OmReference [ '77' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\tself turnOff.\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\tself turnOn.\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:32',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself turnOff.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\tself turnOn.\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:33',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:36:54.017-03:00' ],
+		#prior : OmReference [ '77' ],
+		#self : OmReference [ '78' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:51',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseUp: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:36:54.058-03:00' ],
+		#prior : OmReference [ '78' ],
+		#self : OmReference [ '79' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:37:31.269-03:00' ],
+		#prior : OmReference [ '79' ],
+		#self : OmReference [ '80' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseUp: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:37',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:37:31.275-03:00' ],
+		#prior : OmReference [ '80' ],
+		#self : OmReference [ '81' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseUp: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:37',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:37',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:40:06.47-03:00' ],
+		#prior : OmReference [ '81' ],
+		#self : OmReference [ '82' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself turnOff.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself turnOff.\r\t\tonColor:= Color blue.\t\r\t\t ].\r\t\tself turnOn.\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:33',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tcolor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tcolor:= Color blue.\t\r\t\t ].\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:40',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:40:49.639-03:00' ],
+		#prior : OmReference [ '82' ],
+		#self : OmReference [ '83' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tcolor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tcolor:= Color blue.\t\r\t\t ].\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:40',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself color: Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself color: Color blue.\t\r\t\t ].\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:40',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:41:32.744-03:00' ],
+		#prior : OmReference [ '83' ],
+		#self : OmReference [ '84' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:37',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseUp:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseUp: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value]. "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:41:37.27-03:00' ],
+		#prior : OmReference [ '84' ],
+		#self : OmReference [ '85' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseDown: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value .] "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 15:52',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseDown: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value]. "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:42:51.086-03:00' ],
+		#prior : OmReference [ '85' ],
+		#self : OmReference [ '86' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself color: Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself color: Color blue.\t\r\t\t ].\r\t].\r"tieneBandera:= false.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tonColor:= Color blue.\t"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:40',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself color: Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself color: Color blue.\t\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:42',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:43:47.159-03:00' ],
+		#prior : OmReference [ '86' ],
+		#self : OmReference [ '87' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself color: Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself color: Color blue.\t\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:42',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #toggleBandera,
+			#protocol : #gameLogic,
+			#sourceCode : 'toggleBandera\r(self isOn)ifTrue:[\r\t(tieneBandera) ifTrue: [ \r\t\ttieneBandera:= false.\r\t\tself color: Color green.\r\t\tonColor:= Color green.\r\t\t ] ifFalse: [ \r\t\ttieneBandera:= true.\r\t\tself color: Color blue.\t\r\t\tonColor:= Color blue.\r\t\t ].\r\t].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:43',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:45:11.662-03:00' ],
+		#prior : OmReference [ '87' ],
+		#self : OmReference [ '88' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #tieneBandera,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'tieneBandera\r\t^tieneBandera',
+			#stamp : 'LautaroFaccini 11/15/2023 16:45',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:45:11.67-03:00' ],
+		#prior : OmReference [ '88' ],
+		#self : OmReference [ '89' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #tieneBandera,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'tieneBandera\r\t^tieneBandera',
+			#stamp : 'LautaroFaccini 11/15/2023 16:45',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #tieneBandera,
+			#protocol : #accessing,
+			#sourceCode : 'tieneBandera\r\t^tieneBandera',
+			#stamp : 'LautaroFaccini 11/15/2023 16:45',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:45:14.644-03:00' ],
+		#prior : OmReference [ '89' ],
+		#self : OmReference [ '90' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera ].\r\tcelda onLeftClick: [  celda turnOff  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:24',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFrue: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:45',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:45:51.074-03:00' ],
+		#prior : OmReference [ '90' ],
+		#self : OmReference [ '91' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFrue: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:45',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifTrue: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:45',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:46:11.364-03:00' ],
+		#prior : OmReference [ '91' ],
+		#self : OmReference [ '92' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifTrue: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:45',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFalse: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:46',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:47:04.803-03:00' ],
+		#prior : OmReference [ '92' ],
+		#self : OmReference [ '93' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseDown: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value]. "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:41',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseDown: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value]. "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:47:04.848-03:00' ],
+		#prior : OmReference [ '93' ],
+		#self : OmReference [ '94' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseDown: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value]. "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:47:30.842-03:00' ],
+		#prior : OmReference [ '94' ],
+		#self : OmReference [ '95' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseDown: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value]. "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:47',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:47:30.848-03:00' ],
+		#prior : OmReference [ '95' ],
+		#self : OmReference [ '96' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseDown: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value]. "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:47',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseDown:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseDown: anEvent\r\t anEvent redButtonPressed \r        ifTrue: [ onLeftClick value]. "Click izquierdo"\r    anEvent yellowButtonPressed  \r        ifTrue: [ onRightClick value]. "Click derecho"',
+			#stamp : 'LautaroFaccini 11/15/2023 16:47',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:47:43.425-03:00' ],
+		#prior : OmReference [ '96' ],
+		#self : OmReference [ '97' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseMove:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseMove: anEvent',
+			#stamp : 'LautaroFaccini 11/15/2023 16:47',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:47:43.431-03:00' ],
+		#prior : OmReference [ '97' ],
+		#self : OmReference [ '98' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseMove:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mouseMove: anEvent',
+			#stamp : 'LautaroFaccini 11/15/2023 16:47',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'mouseMove:',
+			#protocol : #'event handling',
+			#sourceCode : 'mouseMove: anEvent',
+			#stamp : 'LautaroFaccini 11/15/2023 16:47',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:49:19.471-03:00' ],
+		#prior : OmReference [ '98' ],
+		#self : OmReference [ '99' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'dificultad tamaño cantMinas celdas minas\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'dificultad tamaño cantMinas celdas minas banderas\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #banderas,
+					#parent : @31
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @31
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @31,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:52:23.03-03:00' ],
+		#prior : OmReference [ '99' ],
+		#self : OmReference [ '100' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #clickDerecho,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'clickDerecho\r(celdas tieneBandera) ifTrue: [ \r\t\tceldas tieneBandera: false.\r\t\tceldas color: Color green.\r\t\tceldas onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tceldas tieneBandera: true.\r\t\tceldas color: Color blue.\t\r\t\tceldas onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:52:36.336-03:00' ],
+		#prior : OmReference [ '100' ],
+		#self : OmReference [ '101' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #clickDerecho,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'clickDerecho\r(celdas tieneBandera) ifTrue: [ \r\t\tceldas tieneBandera: false.\r\t\tceldas color: Color green.\r\t\tceldas onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tceldas tieneBandera: true.\r\t\tceldas color: Color blue.\t\r\t\tceldas onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:52',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #clickDerecho,
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho\r(celdas tieneBandera) ifTrue: [ \r\t\tceldas tieneBandera: false.\r\t\tceldas color: Color green.\r\t\tceldas onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tceldas tieneBandera: true.\r\t\tceldas color: Color blue.\t\r\t\tceldas onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:52:42.67-03:00' ],
+		#prior : OmReference [ '101' ],
+		#self : OmReference [ '102' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ celda toggleBandera ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFalse: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:46',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFalse: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:54:19.948-03:00' ],
+		#prior : OmReference [ '102' ],
+		#self : OmReference [ '103' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda\r(celdas tieneBandera) ifTrue: [ \r\t\tceldas tieneBandera: false.\r\t\tceldas color: Color green.\r\t\tceldas onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tceldas tieneBandera: true.\r\t\tceldas color: Color blue.\t\r\t\tceldas onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:54:31.781-03:00' ],
+		#prior : OmReference [ '103' ],
+		#self : OmReference [ '104' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda\r(celdas tieneBandera) ifTrue: [ \r\t\tceldas tieneBandera: false.\r\t\tceldas color: Color green.\r\t\tceldas onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tceldas tieneBandera: true.\r\t\tceldas color: Color blue.\t\r\t\tceldas onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:54',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda\r(unaCelda tieneBandera) ifTrue: [ \r\t\tunaCelda tieneBandera: false.\r\t\tunaCelda color: Color green.\r\t\tunaCelda onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tunaCelda tieneBandera: true.\r\t\tunaCelda color: Color blue.\t\r\t\tunaCelda onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:54:35.796-03:00' ],
+		#prior : OmReference [ '104' ],
+		#self : OmReference [ '105' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFalse: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:52',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFalse: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:54:38.914-03:00' ],
+		#prior : OmReference [ '105' ],
+		#self : OmReference [ '106' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #clickDerecho,
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho\r(celdas tieneBandera) ifTrue: [ \r\t\tceldas tieneBandera: false.\r\t\tceldas color: Color green.\r\t\tceldas onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tceldas tieneBandera: true.\r\t\tceldas color: Color blue.\t\r\t\tceldas onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:52',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #clickDerecho,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'clickDerecho\r(celdas tieneBandera) ifTrue: [ \r\t\tceldas tieneBandera: false.\r\t\tceldas color: Color green.\r\t\tceldas onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tceldas tieneBandera: true.\r\t\tceldas color: Color blue.\t\r\t\tceldas onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:54:38.967-03:00' ],
+		#prior : OmReference [ '106' ],
+		#self : OmReference [ '107' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #clickDerecho,
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho\r(celdas tieneBandera) ifTrue: [ \r\t\tceldas tieneBandera: false.\r\t\tceldas color: Color green.\r\t\tceldas onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tceldas tieneBandera: true.\r\t\tceldas color: Color blue.\t\r\t\tceldas onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:55:14.154-03:00' ],
+		#prior : OmReference [ '107' ],
+		#self : OmReference [ '108' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'tieneBandera:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'tieneBandera: unValor\rtieneBandera:= unValor',
+			#stamp : 'LautaroFaccini 11/15/2023 16:55',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:55:14.159-03:00' ],
+		#prior : OmReference [ '108' ],
+		#self : OmReference [ '109' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'tieneBandera:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'tieneBandera: unValor\rtieneBandera:= unValor',
+			#stamp : 'LautaroFaccini 11/15/2023 16:55',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Celda,
+				#isMetaSide : false
+			},
+			#name : #'tieneBandera:',
+			#protocol : #accessing,
+			#sourceCode : 'tieneBandera: unValor\rtieneBandera:= unValor',
+			#stamp : 'LautaroFaccini 11/15/2023 16:55',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:56:04.135-03:00' ],
+		#prior : OmReference [ '109' ],
+		#self : OmReference [ '110' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tminas := OrderedCollection new.\r\tself mapearMinas: cantMinas.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 15:15',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tminas := OrderedCollection new.\r\tbanderas:= OrderedCollection new.\r\tself mapearMinas: cantMinas.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 16:56',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:57:35.921-03:00' ],
+		#prior : OmReference [ '110' ],
+		#self : OmReference [ '111' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda at: i at: j\r| posicion |\r(unaCelda tieneBandera) ifTrue: [ \r\t\tunaCelda tieneBandera: false.\r\t\tunaCelda color: Color green.\r\t\tunaCelda onColor: Color green.\r\t\tposicion := Array new: 2.\r\t\tposicion at: 1 put: i.\r\t\tposicion at: 2 put: j.\r\t\tminas addLast: posicion.\r\t\t\r\t\t ] ifFalse: [ \r\t\tunaCelda tieneBandera: true.\r\t\tunaCelda color: Color blue.\t\r\t\tunaCelda onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:57',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:57:41.162-03:00' ],
+		#prior : OmReference [ '111' ],
+		#self : OmReference [ '112' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda\r(unaCelda tieneBandera) ifTrue: [ \r\t\tunaCelda tieneBandera: false.\r\t\tunaCelda color: Color green.\r\t\tunaCelda onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tunaCelda tieneBandera: true.\r\t\tunaCelda color: Color blue.\t\r\t\tunaCelda onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:54',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'clickDerecho: unaCelda\r(unaCelda tieneBandera) ifTrue: [ \r\t\tunaCelda tieneBandera: false.\r\t\tunaCelda color: Color green.\r\t\tunaCelda onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tunaCelda tieneBandera: true.\r\t\tunaCelda color: Color blue.\t\r\t\tunaCelda onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:57:41.165-03:00' ],
+		#prior : OmReference [ '112' ],
+		#self : OmReference [ '113' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda\r(unaCelda tieneBandera) ifTrue: [ \r\t\tunaCelda tieneBandera: false.\r\t\tunaCelda color: Color green.\r\t\tunaCelda onColor: Color green.\r\t\t ] ifFalse: [ \r\t\tunaCelda tieneBandera: true.\r\t\tunaCelda color: Color blue.\t\r\t\tunaCelda onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T16:58:01.104-03:00' ],
+		#prior : OmReference [ '113' ],
+		#self : OmReference [ '114' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFalse: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:54',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda at: i at:j ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFalse: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:58',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T17:00:56.344-03:00' ],
+		#prior : OmReference [ '114' ],
+		#self : OmReference [ '115' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda at: i at: j\r| posicion |\r(unaCelda tieneBandera) ifTrue: [ \r\t\tunaCelda tieneBandera: false.\r\t\tunaCelda color: Color green.\r\t\tunaCelda onColor: Color green.\r\t\tposicion := Array new: 2.\r\t\tposicion at: 1 put: i.\r\t\tposicion at: 2 put: j.\r\t\tminas addLast: posicion.\r\t\t\r\t\t ] ifFalse: [ \r\t\tunaCelda tieneBandera: true.\r\t\tunaCelda color: Color blue.\t\r\t\tunaCelda onColor: Color blue.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 16:57',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda at: i at: j\r| posicion |\rposicion := Array new: 2.\rposicion at: 1 put: i.\rposicion at: 2 put: j.\r(unaCelda tieneBandera) ifTrue: [ \r\t\tunaCelda tieneBandera: false.\r\t\tunaCelda color: Color green.\r\t\tunaCelda onColor: Color green.\r\t\tbanderas remove: posicion.\t\t\r\t\t ] ifFalse: [ \r\t\tunaCelda tieneBandera: true.\r\t\tunaCelda color: Color blue.\t\r\t\tunaCelda onColor: Color blue.\r\t\tbanderas addLast: posicion.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 17:00',
+			#package : #Buscaminas
+		}
+	}
 }
