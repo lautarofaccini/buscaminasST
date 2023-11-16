@@ -1,0 +1,63 @@
+OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:16:06.324-03:00' ],
+		#prior : OmReference [ 'Pharo11-SNAPSHOT-64bit-0ead11d.2B7D3BAB7A00', '20' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrar:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrar: unaCelda at: i at: j\r(unaCelda isOn) ifTrue: [ \r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(numeros at: i at: j) = 0 ifTrue: [ self mostrarAdyacentes: unaCelda at:i  at:j  ].\runaCelda label: (numeros  at: i at:j)   asString.\r ]',
+			#stamp : 'LautaroFaccini 11/16/2023 13:31',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrar:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrar: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(numeros at: i at: j) = 0 ifTrue: [ self mostrarAdyacentes: unaCelda at:i  at:j  ].\runaCelda label: (numeros  at: i at:j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 14:16',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:16:31.518-03:00' ],
+		#prior : OmReference [ '1' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\r(fila - 1) to: (fila + 1) do: [ :i |\r        (columna - 1) to: (columna + 1) do: [ :j |\r            (i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño and: [ i ~= j ] ] ] ]) ifTrue: [\r               self mostrar: (celdas at: i at: i) at: i at: j.\r            ].\r        ].\r    ].',
+			#stamp : 'LautaroFaccini 11/16/2023 13:29',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\r\r-1 to: 1 do:[:i|\r\t-1 to: 1do:[:j|\r\t\t(1<=(fila+i))&(1<=(columna+j))&((fila+i)<=(tamaño))&((columna+j)<=(tamaño)) ifTrue:[\r\t\t\t\r\t\t\t\tself mostrar: (celdas at: fila+i at: columna+j) at: (fila+i) at: (columna+j)\r\t\t\t]\r\t\t]\r\t]',
+			#stamp : 'LautaroFaccini 11/16/2023 14:16',
+			#package : #Buscaminas
+		}
+	}
+}

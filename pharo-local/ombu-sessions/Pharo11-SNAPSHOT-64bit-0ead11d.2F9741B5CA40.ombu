@@ -1,0 +1,124 @@
+OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:34:46.166-03:00' ],
+		#prior : OmReference [ 'Pharo11-SNAPSHOT-64bit-0ead11d.2ECFEED45200', '11' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: fila at: columna\r-1 to: 1 do:[:i|\r\t-1 to: 1do:[:j|\r\t\t(1<=(fila+i))&(1<=(columna+j))&((fila+i)<=(tamaño))&((columna+j)<=(tamaño)) ifTrue:[\r\t\t\t\tself mostrar: (celdas at: fila+i at: columna+j) at: (fila+i) at: (columna+j)\r\t\t\t]\r\t\t]\r\t]',
+			#stamp : 'LautaroFaccini 11/16/2023 14:20',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: fila at: columna\r-1 to: 1 do:[:i|\r\t-1 to: 1do:[:j|\r\t\t(1<=(fila+i))&(1<=(columna+j))&((fila+i)<=(tamaño))&((columna+j)<=(tamaño)) ifTrue:[\r\t\t\t((celdas at: fila+i at: columna+j) isOn) ifTrue: [ \r\t\t\t\tself mostrar: (celdas at: fila+i at: columna+j) at: (fila+i) at: (columna+j)\r\t\t\t\t ].\r\t\t\t]\r\t\t]\r\t]',
+			#stamp : 'LautaroFaccini 11/16/2023 14:34',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:34:59.557-03:00' ],
+		#prior : OmReference [ '1' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrar:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrar: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [\r\tunaCelda turnOff.\r\tminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r\t(numeros at: i at: j) = 0 ifTrue: [ self mostrarAdyacentes:i  at:j  ].\r\tunaCelda label: (numeros  at: i at:j)   asString.\r\t].\r',
+			#stamp : 'LautaroFaccini 11/16/2023 14:22',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrar:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrar: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [\r\tunaCelda turnOff.\r\tminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r\t].\r(numeros at: i at: j) = 0 ifTrue: [ self mostrarAdyacentes:i  at:j  ].\r\tunaCelda label: (numeros  at: i at:j)   asString.\r',
+			#stamp : 'LautaroFaccini 11/16/2023 14:34',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:35:30.105-03:00' ],
+		#prior : OmReference [ '2' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : EpSessionSnapshot {
+		#imageName : 'C:\\Users\\Usuario\\Documents\\Pharo\\images\\Buscaminas\\Buscaminas.image'
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:37:03.754-03:00' ],
+		#prior : OmReference [ '3' ],
+		#self : OmReference [ '4' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'verificar:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'verificar:i at:j\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'verificar:at:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'verificar:i at:j\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:37:03.76-03:00' ],
+		#prior : OmReference [ '4' ],
+		#self : OmReference [ '5' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'verificar:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'verificar:i at:j\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 15:41',
+			#package : #Buscaminas
+		}
+	}
+}

@@ -1,0 +1,249 @@
+OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T23:35:41.743-03:00' ],
+		#prior : OmReference [ 'Pharo11-SNAPSHOT-64bit-0ead11d.443DCD2D6C80', '97' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tminas := OrderedCollection new.\r\tbanderas:= OrderedCollection new.\r\tself mapearMinas: cantMinas.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 16:56',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tminas := OrderedCollection new.\r\tbanderas:= OrderedCollection new.\r\t"self mapearMinas: cantMinas."\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:35',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T23:37:38.249-03:00' ],
+		#prior : OmReference [ '1' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j posicion|\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\ti:= (tamaño atRandom).\r\tj:= (tamaño atRandom).\r\t[((celdas at: i at: j) tieneMina)] whileTrue: [ \r\t\ti:= (tamaño atRandom).\r\t\tj:= (tamaño atRandom).\r\t].\r\t(celdas at: i at: j) ponerMina.\r\tposicion := Array new: 2.\r\tposicion at: 1 put: i.\r\tposicion at: 2 put: j.\r\tminas addLast: posicion.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 15:15',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j posicion|\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\ti:= (tamaño atRandom).\r\tj:= (tamaño atRandom).\r\t"[((celdas at: i at: j) tieneMina)] whileTrue: [ \r\t\ti:= (tamaño atRandom).\r\t\tj:= (tamaño atRandom).\r\t]."\r\t(celdas at: i at: j) ponerMina.\r\tposicion := Array new: 2.\r\tposicion at: 1 put: i.\r\tposicion at: 2 put: j.\r\tminas addLast: posicion.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:37',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T23:38:23.649-03:00' ],
+		#prior : OmReference [ '2' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tminas := OrderedCollection new.\r\tbanderas:= OrderedCollection new.\r\t"self mapearMinas: cantMinas."\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:35',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tminas := OrderedCollection new.\r\tbanderas:= OrderedCollection new.\r\tself mapearMinas: cantMinas.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:38',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T23:40:58.694-03:00' ],
+		#prior : OmReference [ '3' ],
+		#self : OmReference [ '4' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j posicion|\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\ti:= (tamaño atRandom).\r\tj:= (tamaño atRandom).\r\t"[((celdas at: i at: j) tieneMina)] whileTrue: [ \r\t\ti:= (tamaño atRandom).\r\t\tj:= (tamaño atRandom).\r\t]."\r\t(celdas at: i at: j) ponerMina.\r\tposicion := Array new: 2.\r\tposicion at: 1 put: i.\r\tposicion at: 2 put: j.\r\tminas addLast: posicion.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:37',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j posicion|\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\ti:= (tamaño atRandom).\r\tj:= (tamaño atRandom).\r\t[(celdas at: i at: j tieneMina)] whileTrue: [ \r\t\ti:= (tamaño atRandom).\r\t\tj:= (tamaño atRandom).\r\t].\r\tceldas at: i at: j ponerMina.\r\tposicion := Array new: 2.\r\tposicion at: 1 put: i.\r\tposicion at: 2 put: j.\r\tminas addLast: posicion.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:40',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T23:41:38.041-03:00' ],
+		#prior : OmReference [ '4' ],
+		#self : OmReference [ '5' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j posicion|\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\ti:= (tamaño atRandom).\r\tj:= (tamaño atRandom).\r\t[(celdas at: i at: j tieneMina)] whileTrue: [ \r\t\ti:= (tamaño atRandom).\r\t\tj:= (tamaño atRandom).\r\t].\r\tceldas at: i at: j ponerMina.\r\tposicion := Array new: 2.\r\tposicion at: 1 put: i.\r\tposicion at: 2 put: j.\r\tminas addLast: posicion.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:40',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j posicion|\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\ti:= (tamaño atRandom).\r\tj:= (tamaño atRandom).\r\t[((celdas at: i) at: j) tieneMina] whileTrue: [ \r\t\ti:= (tamaño atRandom).\r\t\tj:= (tamaño atRandom).\r\t].\r\t((celdas at: i) at: j) ponerMina.\r\tposicion := Array new: 2.\r\tposicion at: 1 put: i.\r\tposicion at: 2 put: j.\r\tminas addLast: posicion.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T23:42:47.592-03:00' ],
+		#prior : OmReference [ '5' ],
+		#self : OmReference [ '6' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j posicion|\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\ti:= (tamaño atRandom).\r\tj:= (tamaño atRandom).\r\t[((celdas at: i) at: j) tieneMina] whileTrue: [ \r\t\ti:= (tamaño atRandom).\r\t\tj:= (tamaño atRandom).\r\t].\r\t((celdas at: i) at: j) ponerMina.\r\tposicion := Array new: 2.\r\tposicion at: 1 put: i.\r\tposicion at: 2 put: j.\r\tminas addLast: posicion.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:41',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mapearMinas:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearMinas: unaCantidad\r| i j posicion|\r\t(unaCantidad > 1) ifTrue: [ \r\t\tself mapearMinas: (unaCantidad-1).\r\t\t ].\r\ti:= (tamaño atRandom).\r\tj:= (tamaño atRandom).\r\t[((celdas at: i at: j) tieneMina)] whileTrue: [ \r\t\ti:= (tamaño atRandom).\r\t\tj:= (tamaño atRandom).\r\t].\r\t(celdas at: i at: j) ponerMina.\r\tposicion := Array new: 2.\r\tposicion at: 1 put: i.\r\tposicion at: 2 put: j.\r\tminas addLast: posicion.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:42',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T23:56:15.491-03:00' ],
+		#prior : OmReference [ '6' ],
+		#self : OmReference [ '7' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda at: i at:j ].\r\tcelda onLeftClick: [ self clickIzquierdo: celda at: i at:j ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:27',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda at: i at:j ].\r\tcelda onLeftClick: [ self clickIzquierdo: celda at: i at:j ].\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 23:56',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T00:03:46.997-03:00' ],
+		#prior : OmReference [ '7' ],
+		#self : OmReference [ '8' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rself mostrarMinas.\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ Buscaminas reiniciar ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:25',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rself mostrarMinas.\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:nil default: nil.\rderrota ifTrue:[ Buscaminas reiniciar ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/16/2023 00:03',
+			#package : #Buscaminas
+		}
+	}
+}

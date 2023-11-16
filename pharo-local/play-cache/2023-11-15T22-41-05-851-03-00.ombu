@@ -1,0 +1,7 @@
+OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T22:41:09.573-03:00' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : 'Buscamians'
+}

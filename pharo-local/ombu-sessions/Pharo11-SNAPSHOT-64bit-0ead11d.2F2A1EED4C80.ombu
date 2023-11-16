@@ -1,0 +1,94 @@
+OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:25:19.511-03:00' ],
+		#prior : OmReference [ 'Pharo11-SNAPSHOT-64bit-0ead11d.2ECFEED45200', '11' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: fila at: columna\r-1 to: 1 do:[:i|\r\t-1 to: 1do:[:j|\r\t\t(1<=(fila+i))&(1<=(columna+j))&((fila+i)<=(tamaño))&((columna+j)<=(tamaño)) ifTrue:[\r\t\t\t\tself mostrar: (celdas at: fila+i at: columna+j) at: (fila+i) at: (columna+j)\r\t\t\t]\r\t\t]\r\t]',
+			#stamp : 'LautaroFaccini 11/16/2023 14:20',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: fila at: columna\r-1 to: 1 do:[:i|\r\t-1 to: 1do:[:j|\r\t\t(1<=(fila+i))&(1<=(columna+j))&((fila+i)<=(tamaño))&((columna+j)<=(tamaño)) ifTrue:[\r\t\t\t\t"self mostrar: (celdas at: fila+i at: columna+j) at: (fila+i) at: (columna+j)"\r\t\t\t]\r\t\t]\r\t]',
+			#stamp : 'LautaroFaccini 11/16/2023 14:25',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:29:40.668-03:00' ],
+		#prior : OmReference [ '1' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: fila at: columna\r-1 to: 1 do:[:i|\r\t-1 to: 1do:[:j|\r\t\t(1<=(fila+i))&(1<=(columna+j))&((fila+i)<=(tamaño))&((columna+j)<=(tamaño)) ifTrue:[\r\t\t\t\t"self mostrar: (celdas at: fila+i at: columna+j) at: (fila+i) at: (columna+j)"\r\t\t\t]\r\t\t]\r\t]',
+			#stamp : 'LautaroFaccini 11/16/2023 14:27',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: fila at: columna\r-1 to: 1 do:[:i|\r\t-1 to: 1do:[:j|\r\t\t(1<=(fila+i))&(1<=(columna+j))&((fila+i)<=(tamaño))&((columna+j)<=(tamaño)) ifTrue:[\r\t\t\t(celdas at: fila + i at: fila + j) ifTrue: [ \r\t\t\t\tself mostrar: (celdas at: fila+i at: columna+j) at: (fila+i) at: (columna+j)\r\t\t\t\t]\r\t\t\t]\r\t\t]\r\t]',
+			#stamp : 'LautaroFaccini 11/16/2023 14:29',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T14:30:28.85-03:00' ],
+		#prior : OmReference [ '2' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: fila at: columna\r-1 to: 1 do:[:i|\r\t-1 to: 1do:[:j|\r\t\t(1<=(fila+i))&(1<=(columna+j))&((fila+i)<=(tamaño))&((columna+j)<=(tamaño)) ifTrue:[\r\t\t\t(celdas at: fila + i at: fila + j) ifTrue: [ \r\t\t\t\tself mostrar: (celdas at: fila+i at: columna+j) at: (fila+i) at: (columna+j)\r\t\t\t\t]\r\t\t\t]\r\t\t]\r\t]',
+			#stamp : 'LautaroFaccini 11/16/2023 14:29',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: fila at: columna\r-1 to: 1 do:[:i|\r\t-1 to: 1do:[:j|\r\t\t(1<=(fila+i))&(1<=(columna+j))&((fila+i)<=(tamaño))&((columna+j)<=(tamaño)) ifTrue:[\r\t\t\t(celdas at: fila + i at: fila + j) isOn ifTrue: [ \r\t\t\t\tself mostrar: (celdas at: fila+i at: columna+j) at: (fila+i) at: (columna+j)\r\t\t\t\t]\r\t\t\t]\r\t\t]\r\t]',
+			#stamp : 'LautaroFaccini 11/16/2023 14:30',
+			#package : #Buscaminas
+		}
+	}
+}

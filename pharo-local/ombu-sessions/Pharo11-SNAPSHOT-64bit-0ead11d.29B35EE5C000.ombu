@@ -1,0 +1,915 @@
+OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:44:36.559-03:00' ],
+		#prior : OmReference [ 'Pharo11-SNAPSHOT-64bit-0ead11d.4D2CF5383000', '8' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'dificultad tamaño cantMinas celdas minas banderas\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #banderas,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'dificultad tamaño cantMinas celdas minas banderas numeros\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #banderas,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #numeros,
+					#parent : @33
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @33
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @33,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:44:55.484-03:00' ],
+		#prior : OmReference [ '1' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tminas := OrderedCollection new.\r\tbanderas:= OrderedCollection new.\r\tself mapearMinas: cantMinas.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 23:38',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #crearTablero,
+			#protocol : #initialize,
+			#sourceCode : 'crearTablero \r\t| lado plantillaCelda |\r\tself useRoundedCorners.\r\t(dificultad = 1) ifTrue: [ \r\t\ttamaño:= 8.\r\t\tcantMinas:= 10\r\t\t ].\r\t(dificultad = 2) ifTrue: [ \r\t\ttamaño:= 14.\r\t\tcantMinas:= 40 \r\t\t ].\r\t(dificultad = 3) ifTrue: [ \r\t\ttamaño:= 20.\r\t\tcantMinas:= 99\r\t\t ].\r\tplantillaCelda := Celda new.\r\tlado:= plantillaCelda width.\r\tself color: Color lightBrown .\t\r\tself bounds: (400 @ 100 extent: (lado * tamaño) @ (lado * tamaño)+ (2* borderWidth) ).\r\tceldas:= Array2D new: tamaño tabulate: [ :i :j | self  nuevaCelda: i at: j  ].\r\tminas := OrderedCollection new.\r\tbanderas:= OrderedCollection new.\r\tself mapearMinas: cantMinas.\r\tself mapearNumeros. ',
+			#stamp : 'LautaroFaccini 11/16/2023 12:44',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:45:19.196-03:00' ],
+		#prior : OmReference [ '2' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mapearNumeros,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mapearNumeros \r|fila columna|\t\rnumeros  := Array2D new: tamaño. \r1 to: tamaño do: [ :i|\r\t1 to: tamaño  do: [ :j|\r\t\tnumeros  at: i at: j put:0   ]. ].\rminas do: [ :pos|\r\tfila := pos at: 1.\r\tcolumna := pos at: 2.\r\t(fila - 1) to: (fila + 1) do: [ :i |\r        "Itera sobre las columnas adyacentes"\r        (columna - 1) to: (columna + 1) do: [ :j |\r            "Asegúrate de que la posición sea válida"\r            (i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r               \tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r            ].\r        ].\r    ].\r\t ]',
+			#stamp : 'LautaroFaccini 11/16/2023 12:45',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:45:25.24-03:00' ],
+		#prior : OmReference [ '3' ],
+		#self : OmReference [ '4' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mapearNumeros,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mapearNumeros \r|fila columna|\t\rnumeros  := Array2D new: tamaño. \r1 to: tamaño do: [ :i|\r\t1 to: tamaño  do: [ :j|\r\t\tnumeros  at: i at: j put:0   ]. ].\rminas do: [ :pos|\r\tfila := pos at: 1.\r\tcolumna := pos at: 2.\r\t(fila - 1) to: (fila + 1) do: [ :i |\r        "Itera sobre las columnas adyacentes"\r        (columna - 1) to: (columna + 1) do: [ :j |\r            "Asegúrate de que la posición sea válida"\r            (i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r               \tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r            ].\r        ].\r    ].\r\t ]',
+			#stamp : 'LautaroFaccini 11/16/2023 12:45',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mapearNumeros,
+			#protocol : #gameLogic,
+			#sourceCode : 'mapearNumeros \r|fila columna|\t\rnumeros  := Array2D new: tamaño. \r1 to: tamaño do: [ :i|\r\t1 to: tamaño  do: [ :j|\r\t\tnumeros  at: i at: j put:0   ]. ].\rminas do: [ :pos|\r\tfila := pos at: 1.\r\tcolumna := pos at: 2.\r\t(fila - 1) to: (fila + 1) do: [ :i |\r        "Itera sobre las columnas adyacentes"\r        (columna - 1) to: (columna + 1) do: [ :j |\r            "Asegúrate de que la posición sea válida"\r            (i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r               \tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r            ].\r        ].\r    ].\r\t ]',
+			#stamp : 'LautaroFaccini 11/16/2023 12:45',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:45:46.307-03:00' ],
+		#prior : OmReference [ '4' ],
+		#self : OmReference [ '5' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 21:24',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\runaCelda label: (numeros  at: i at:j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:45',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:47:13.11-03:00' ],
+		#prior : OmReference [ '5' ],
+		#self : OmReference [ '6' ]
+	},
+	#content : EpSessionSnapshot {
+		#imageName : 'C:\\Users\\Usuario\\Documents\\Pharo\\images\\Buscaminas\\Buscaminas.image'
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:47:28.499-03:00' ],
+		#prior : OmReference [ '6' ],
+		#self : OmReference [ '7' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\runaCelda label: (numeros  at: i at:j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:45',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\runaCelda label: (numeros  at: i at:j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:47',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:47:32.089-03:00' ],
+		#prior : OmReference [ '7' ],
+		#self : OmReference [ '8' ]
+	},
+	#content : EpSessionSnapshot {
+		#imageName : 'C:\\Users\\Usuario\\Documents\\Pharo\\images\\Buscaminas\\Buscaminas.image'
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:48:39.057-03:00' ],
+		#prior : OmReference [ '8' ],
+		#self : OmReference [ '9' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\runaCelda label: (numeros  at: i at:j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:47',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:48',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:51:09.602-03:00' ],
+		#prior : OmReference [ '9' ],
+		#self : OmReference [ '10' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\r\r\t(fila - 1) to: (fila + 1) do: [ :i |\r        "Itera sobre las columnas adyacentes"\r        (columna - 1) to: (columna + 1) do: [ :j |\r            "Asegúrate de que la posición sea válida"\r            (i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r               \tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r            ].\r        ].\r    ].',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:51:14.73-03:00' ],
+		#prior : OmReference [ '10' ],
+		#self : OmReference [ '11' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\r\r\t(fila - 1) to: (fila + 1) do: [ :i |\r        "Itera sobre las columnas adyacentes"\r        (columna - 1) to: (columna + 1) do: [ :j |\r            "Asegúrate de que la posición sea válida"\r            (i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r               \tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r            ].\r        ].\r    ].',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\r\r\t(fila - 1) to: (fila + 1) do: [ :i |\r        "Itera sobre las columnas adyacentes"\r        (columna - 1) to: (columna + 1) do: [ :j |\r            "Asegúrate de que la posición sea válida"\r            (i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r               \tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r            ].\r        ].\r    ].',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:51:17.809-03:00' ],
+		#prior : OmReference [ '11' ],
+		#self : OmReference [ '12' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:48',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(unaCelda at: fila at: columna) = 0 ifTrue: self MostrarAdyacentes.\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:51:23.188-03:00' ],
+		#prior : OmReference [ '12' ],
+		#self : OmReference [ '13' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(unaCelda at: fila at: columna) = 0 ifTrue: self MostrarAdyacentes.\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(unaCelda at: fila at: columna) = 0 ifTrue: [self MostrarAdyacentes].\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:51:33.155-03:00' ],
+		#prior : OmReference [ '13' ],
+		#self : OmReference [ '14' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(unaCelda at: fila at: columna) = 0 ifTrue: [self MostrarAdyacentes].\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r((unaCelda at: fila at: columna) = 0) ifTrue: [self MostrarAdyacentes].\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:51:38.758-03:00' ],
+		#prior : OmReference [ '14' ],
+		#self : OmReference [ '15' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r((unaCelda at: fila at: columna) = 0) ifTrue: [self MostrarAdyacentes].\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r((unaCelda at: fila at: columna) = 0) ifTrue: [self mostrarAdyacentes].\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:52:14.587-03:00' ],
+		#prior : OmReference [ '15' ],
+		#self : OmReference [ '16' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: fila at: columna\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = fila) & ((pos at: 2) = columna) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r((unaCelda at: fila at: columna) = 0) ifTrue: [self mostrarAdyacentes].\runaCelda label: (numeros  at: fila at:columna)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r((unaCelda at: i at: j) = 0) ifTrue: [self mostrarAdyacentes: unaCelda at: i at: j].\runaCelda label: (numeros  at: i at: j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:52:25.822-03:00' ],
+		#prior : OmReference [ '16' ],
+		#self : OmReference [ '17' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r((unaCelda at: i at: j) = 0) ifTrue: [self mostrarAdyacentes: unaCelda at: i at: j].\runaCelda label: (numeros  at: i at: j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:52',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(unaCelda at: i at: j) = 0 ifTrue: [self mostrarAdyacentes: unaCelda at: i at: j].\runaCelda label: (numeros  at: i at: j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:54:37.675-03:00' ],
+		#prior : OmReference [ '17' ],
+		#self : OmReference [ '18' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\r\r\t(fila - 1) to: (fila + 1) do: [ :i |\r        "Itera sobre las columnas adyacentes"\r        (columna - 1) to: (columna + 1) do: [ :j |\r            "Asegúrate de que la posición sea válida"\r            (i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r               \tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r            ].\r        ].\r    ].',
+			#stamp : 'LautaroFaccini 11/16/2023 12:51',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\rself clickIzquierdo: unaCelda at: fila - 1 at: columna.\r"(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r\t\t\t].\r\t\t\r\t\t].\r\t]."',
+			#stamp : 'LautaroFaccini 11/16/2023 12:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:55:26.718-03:00' ],
+		#prior : OmReference [ '18' ],
+		#self : OmReference [ '19' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(unaCelda at: i at: j) = 0 ifTrue: [self mostrarAdyacentes: unaCelda at: i at: j].\runaCelda label: (numeros  at: i at: j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:52',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(numeros at: i at: j) = 0 ifTrue: [self mostrarAdyacentes: unaCelda at: i at: j].\runaCelda label: (numeros  at: i at: j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:55',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:58:20.873-03:00' ],
+		#prior : OmReference [ '19' ],
+		#self : OmReference [ '20' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrar:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrar: unaCelda at: i at: j\r\t',
+			#stamp : 'LautaroFaccini 11/16/2023 12:58',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:58:59.565-03:00' ],
+		#prior : OmReference [ '20' ],
+		#self : OmReference [ '21' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrar:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrar: unaCelda at: i at: j\r\t',
+			#stamp : 'LautaroFaccini 11/16/2023 12:58',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrar:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrar: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(numeros at: i at: j) = 0 ifTrue: [self mostrarAdyacentes: unaCelda at: i at: j].\runaCelda label: (numeros  at: i at: j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:58',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T12:59:48.114-03:00' ],
+		#prior : OmReference [ '21' ],
+		#self : OmReference [ '22' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].\r(numeros at: i at: j) = 0 ifTrue: [self mostrarAdyacentes: unaCelda at: i at: j].\runaCelda label: (numeros  at: i at: j)   asString.',
+			#stamp : 'LautaroFaccini 11/16/2023 12:55',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\rself mostrar: unaCelda at: i at: j',
+			#stamp : 'LautaroFaccini 11/16/2023 12:59',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T13:00:15.419-03:00' ],
+		#prior : OmReference [ '22' ],
+		#self : OmReference [ '23' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\rself clickIzquierdo: unaCelda at: fila - 1 at: columna.\r"(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r\t\t\t].\r\t\t\r\t\t].\r\t]."',
+			#stamp : 'LautaroFaccini 11/16/2023 12:54',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\rself mostrar: unaCelda at: fila - 1 at: columna.\r"(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r\t\t\t].\r\t\t\r\t\t].\r\t]."',
+			#stamp : 'LautaroFaccini 11/16/2023 13:00',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T13:00:32.364-03:00' ],
+		#prior : OmReference [ '23' ],
+		#self : OmReference [ '24' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\rself mostrar: unaCelda at: fila - 1 at: columna.\r"(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r\t\t\t].\r\t\t\r\t\t].\r\t]."',
+			#stamp : 'LautaroFaccini 11/16/2023 13:00',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\rself mostrar: unaCelda at: (fila - 1) at: columna.\r"(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r\t\t\t].\r\t\t\r\t\t].\r\t]."',
+			#stamp : 'LautaroFaccini 11/16/2023 13:00',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T13:03:28.103-03:00' ],
+		#prior : OmReference [ '24' ],
+		#self : OmReference [ '25' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\rself mostrar: unaCelda at: (fila - 1) at: columna.\r"(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r\t\t\t].\r\t\t\r\t\t].\r\t]."',
+			#stamp : 'LautaroFaccini 11/16/2023 13:00',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\rself mostrar: (celdas at: fila - 1 at: columna) at: (fila - 1) at: columna.\r"(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r\t\t\t].\r\t\t\r\t\t].\r\t]."',
+			#stamp : 'LautaroFaccini 11/16/2023 13:03',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T13:04:15.595-03:00' ],
+		#prior : OmReference [ '25' ],
+		#self : OmReference [ '26' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\rself mostrar: (celdas at: fila - 1 at: columna) at: (fila - 1) at: columna.\r"(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tnumeros  at:i at:j put: ((numeros at:i at:j) + 1).\r\t\t\t].\r\t\t\r\t\t].\r\t]."',
+			#stamp : 'LautaroFaccini 11/16/2023 13:03',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\r(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tself mostrar: (celdas at: i at: j) at: i at: j.\r\t\t\t].\r\t\t\r\t\t].\r\t].',
+			#stamp : 'LautaroFaccini 11/16/2023 13:04',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-16T13:05:52.488-03:00' ],
+		#prior : OmReference [ '26' ],
+		#self : OmReference [ '27' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\r(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño  ] ] ]) ifTrue: [\r\t\t\tself mostrar: (celdas at: i at: j) at: i at: j.\r\t\t\t].\r\t\t\r\t\t].\r\t].',
+			#stamp : 'LautaroFaccini 11/16/2023 13:04',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'mostrarAdyacentes:at:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarAdyacentes: unaCelda at: fila at: columna\r(fila - 1) to: (fila + 1) do: [ :i |\r\t(columna - 1) to: (columna + 1) do: [ :j |\r\t\t\r\t\t(i > 0 and: [ i <= tamaño and: [ j > 0 and: [ j <= tamaño and: [ i ~= fila and: j ~= columna ] ] ] ]) ifTrue: [\r\t\t\tself mostrar: (celdas at: i at: j) at: i at: j.\r\t\t\t].\r\t\t\r\t\t].\r\t].',
+			#stamp : 'LautaroFaccini 11/16/2023 13:05',
+			#package : #Buscaminas
+		}
+	}
+}

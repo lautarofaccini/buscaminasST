@@ -1,170 +1,144 @@
-[31mArgumentsCountMismatch: This block accepts 1 argument, but was called with 0 arguments.
-[0mFullBlockClosure(BlockClosure)>>numArgsError:
-FullBlockClosure(BlockClosure)>>value
-SmallInteger(Integer)>>timesRepeat:
-UndefinedObject>>DoIt
-OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
-OpalCompiler>>evaluate
-[
-		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
-		oldBindings := self interactionModel bindings copy.
-		receiver := self interactionModel doItReceiver.
-		result := receiver class compiler
-			source: aString;
-			context: self interactionModel doItContext;
-			receiver: self interactionModel doItReceiver;
-			requestor: self interactionModel;
-			environment: self environment;
-			failBlock:  [ 
-				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
-				^ compileErrorBlock value ];
-			evaluate.
-		oldBindings size = self interactionModel bindings size 
-			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
-		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
-		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-SpCodePresenter>>evaluate:onCompileError:onError:
-StPlaygroundPagePresenter>>doEvaluateAndGo
-StPlaygroundPagePresenter>>doEvaluateAllAndGo
-StPlaygroundDoItCommand>>execute
-SpCommand(CmCommandDecorator)>>execute
-[ specCommand execute ] in [ :specCommand | 
-			aButtonClass new
-				label: specCommand name;
-				help: specCommand description;
-				in: [ :button | 
-					specCommand hasIcon
-						ifTrue: [ button icon: specCommand icon ] ];
-				action: [ specCommand execute ];
-				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
-FullBlockClosure(BlockClosure)>>cull:
-SpMorphicToolbarButtonAdapter>>execute
-SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
-[:m |
-		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
-Array(SequenceableCollection)>>do:
-SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
-SpToolbarButtonMorph(Morph)>>handleMouseUp:
+[31mNonBooleanReceiver: proceed for truth.
+[0mCelda(ProtoObject)>>mustBeBooleanIn:
+Celda(ProtoObject)>>mustBeBoolean
+Tablero>>mostrarAdyacentes:at:
+Tablero>>mostrar:at:at:
+Tablero>>clickIzquierdo:at:at:
+[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
+Celda>>mouseDown:
+Celda(Morph)>>handleMouseDown:
 MouseButtonEvent>>sentTo:
-SpToolbarButtonMorph(Morph)>>handleEvent:
-SpToolbarButtonMorph(Morph)>>handleFocusEvent:
-[
-		result := focusHolder handleFocusEvent: transformedEvent.
-	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-WorldMorph>>becomeActiveDuring:
-HandMorph>>sendFocusEvent:to:clear:
-HandMorph>>sendEvent:focus:clear:
-HandMorph>>sendMouseEvent:
-[0m[31mArgumentsCountMismatch: This block accepts 1 argument, but was called with 0 arguments.
-[0mFullBlockClosure(BlockClosure)>>numArgsError:
-FullBlockClosure(BlockClosure)>>value
-SmallInteger(Integer)>>timesRepeat:
-UndefinedObject>>DoIt
-OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
-OpalCompiler>>evaluate
-[
-		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
-		oldBindings := self interactionModel bindings copy.
-		receiver := self interactionModel doItReceiver.
-		result := receiver class compiler
-			source: aString;
-			context: self interactionModel doItContext;
-			receiver: self interactionModel doItReceiver;
-			requestor: self interactionModel;
-			environment: self environment;
-			failBlock:  [ 
-				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
-				^ compileErrorBlock value ];
-			evaluate.
-		oldBindings size = self interactionModel bindings size 
-			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
-		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
-		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-SpCodePresenter>>evaluate:onCompileError:onError:
-StPlaygroundPagePresenter>>doEvaluateAndGo
-StPlaygroundPagePresenter>>doEvaluateAllAndGo
-StPlaygroundDoItCommand>>execute
-SpCommand(CmCommandDecorator)>>execute
-[ specCommand execute ] in [ :specCommand | 
-			aButtonClass new
-				label: specCommand name;
-				help: specCommand description;
-				in: [ :button | 
-					specCommand hasIcon
-						ifTrue: [ button icon: specCommand icon ] ];
-				action: [ specCommand execute ];
-				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
-FullBlockClosure(BlockClosure)>>cull:
-SpMorphicToolbarButtonAdapter>>execute
-SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
-[:m |
-		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
-Array(SequenceableCollection)>>do:
-SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
-SpToolbarButtonMorph(Morph)>>handleMouseUp:
+Celda(Morph)>>handleEvent:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
 MouseButtonEvent>>sentTo:
-SpToolbarButtonMorph(Morph)>>handleEvent:
-SpToolbarButtonMorph(Morph)>>handleFocusEvent:
-[
-		result := focusHolder handleFocusEvent: transformedEvent.
-	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-WorldMorph>>becomeActiveDuring:
-HandMorph>>sendFocusEvent:to:clear:
-HandMorph>>sendEvent:focus:clear:
-HandMorph>>sendMouseEvent:
-[0m[31mInstance of SmallInteger did not understand #do:
-[0mSmallInteger(Object)>>doesNotUnderstand: #do:
-UndefinedObject>>DoIt
-OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
-OpalCompiler>>evaluate
-[
-		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
-		oldBindings := self interactionModel bindings copy.
-		receiver := self interactionModel doItReceiver.
-		result := receiver class compiler
-			source: aString;
-			context: self interactionModel doItContext;
-			receiver: self interactionModel doItReceiver;
-			requestor: self interactionModel;
-			environment: self environment;
-			failBlock:  [ 
-				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
-				^ compileErrorBlock value ];
-			evaluate.
-		oldBindings size = self interactionModel bindings size 
-			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
-		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
-		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-SpCodePresenter>>evaluate:onCompileError:onError:
-StPlaygroundPagePresenter>>doEvaluateAndGo
-StPlaygroundPagePresenter>>doEvaluateAllAndGo
-StPlaygroundDoItCommand>>execute
-SpCommand(CmCommandDecorator)>>execute
-[ specCommand execute ] in [ :specCommand | 
-			aButtonClass new
-				label: specCommand name;
-				help: specCommand description;
-				in: [ :button | 
-					specCommand hasIcon
-						ifTrue: [ button icon: specCommand icon ] ];
-				action: [ specCommand execute ];
-				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
-FullBlockClosure(BlockClosure)>>cull:
-SpMorphicToolbarButtonAdapter>>execute
-SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
-[:m |
-		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
-Array(SequenceableCollection)>>do:
-SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
-SpToolbarButtonMorph(Morph)>>handleMouseUp:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+Celda(Morph)>>processEvent:using:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
 MouseButtonEvent>>sentTo:
-SpToolbarButtonMorph(Morph)>>handleEvent:
-SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+Tablero(Morph)>>processEvent:using:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+[0m[31mNonBooleanReceiver: proceed for truth.
+[0mCelda(ProtoObject)>>mustBeBooleanIn:
+Celda(ProtoObject)>>mustBeBoolean
+Tablero>>mostrarAdyacentes:at:
+Tablero>>mostrar:at:at:
+Tablero>>clickIzquierdo:at:at:
+[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
+Celda>>mouseDown:
+Celda(Morph)>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+Celda(Morph)>>handleEvent:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+Celda(Morph)>>processEvent:using:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+Tablero(Morph)>>processEvent:using:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+[0m:using:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
+[0m sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #at:at:
+UndefinedObject>>doesNotUnderstand: #at:at:
+Tablero>>clickIzquierdo:at:at:
+[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
+Celda>>mouseDown:
+Celda(Morph)>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+Celda(Morph)>>handleEvent:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+Celda(Morph)>>processEvent:using:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+Tablero(Morph)>>processEvent:using:
+Tablero(Morph)>>processEvent:
+[ :morph | "but allow a submorph to process and override double-click/drag response."
+		(morph containsPoint: evt cursorPoint) ifTrue: [ morph processEvent: evt ]
+	] in SystemWindow>>mouseDown: in Block: [ :morph | "but allow a submorph to process an[..]
+Array(SequenceableCollection)>>do:
+SystemWindow(Morph)>>submorphsDo:
+SystemWindow>>mouseDown:
+SystemWindow(Morph)>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+SystemWindow(Morph)>>handleEvent:
+[0m[31m#at:at: was sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #at:at:
+UndefinedObject>>doesNotUnderstand: #at:at:
+Tablero>>clickIzquierdo:at:at:
+[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
+Celda>>mouseDown:
+Celda(Morph)>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+Celda(Morph)>>handleEvent:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+Celda(Morph)>>processEvent:using:
+MorphicEventDispatcher>>dispatchMouseDown:with:
+MorphicEventDispatcher>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
+FullBlockClosure(BlockClosure)>>ensure:
+MorphicEventDispatcher>>dispatchEvent:with:
+Tablero(Morph)>>processEvent:using:
+Tablero(Morph)>>processEvent:
+[ :morph | "but allow a submorph to process and override double-click/drag response."
+		(morph containsPoint: evt cursorPoint) ifTrue: [ morph processEvent: evt ]
+	] in SystemWindow>>mouseDown: in Block: [ :morph | "but allow a submorph to process an[..]
+Array(SequenceableCollection)>>do:
+SystemWindow(Morph)>>submorphsDo:
+SystemWindow>>mouseDown:
+SystemWindow(Morph)>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+SystemWindow(Morph)>>handleEvent:
+[0m[31m#at:at: was sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #at:at:
+UndefinedObject>>doesNotUnderstand: #at:at:
+Tablero>>clickIzquierdo:at:at:
+[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
+Celda>>mouseDown:
+Celda(Morph)>>handleMouseDown:
+MouseButtonEvent>>sentTo:
+Celda(Morph)>>handleEvent:
+Celda(Morph)>>handleFocusEvent:
 [
 		result := focusHolder handleFocusEvent: transformedEvent.
 	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
@@ -174,56 +148,44 @@ HandMorph>>sendFocusEvent:to:clear:
 HandMorph>>sendEvent:focus:clear:
 HandMorph>>sendMouseEvent:
 HandMorph>>handleEvent:
-HandMorph>>processEvents
-[0m[31mInstance of SmallInteger did not understand #do:
-[0mSmallInteger(Object)>>doesNotUnderstand: #do:
-UndefinedObject>>DoIt
-OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
-OpalCompiler>>evaluate
 [
-		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
-		oldBindings := self interactionModel bindings copy.
-		receiver := self interactionModel doItReceiver.
-		result := receiver class compiler
-			source: aString;
-			context: self interactionModel doItContext;
-			receiver: self interactionModel doItReceiver;
-			requestor: self interactionModel;
-			environment: self environment;
-			failBlock:  [ 
-				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
-				^ compileErrorBlock value ];
-			evaluate.
-		oldBindings size = self interactionModel bindings size 
-			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
-		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
-		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-SpCodePresenter>>evaluate:onCompileError:onError:
-StPlaygroundPagePresenter>>doEvaluateAndGo
-StPlaygroundPagePresenter>>doEvaluateAllAndGo
-StPlaygroundDoItCommand>>execute
-SpCommand(CmCommandDecorator)>>execute
-[ specCommand execute ] in [ :specCommand | 
-			aButtonClass new
-				label: specCommand name;
-				help: specCommand description;
-				in: [ :button | 
-					specCommand hasIcon
-						ifTrue: [ button icon: specCommand icon ] ];
-				action: [ specCommand execute ];
-				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
-FullBlockClosure(BlockClosure)>>cull:
-SpMorphicToolbarButtonAdapter>>execute
-SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
-[:m |
-		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
-Array(SequenceableCollection)>>do:
-SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
-SpToolbarButtonMorph(Morph)>>handleMouseUp:
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNotNil ]) ifTrue: [
+			morphicWorld activeHand handleEvent: anEvent
+		]
+	] in OSWindowMorphicEventHandler>>dispatchMorphicEvent: in Block: [...
+WorldState>>runStepMethodsIn:
+WorldMorph>>runStepMethods
+WorldState>>doOneCycleFor:
+WorldMorph>>doOneCycleNow
+WorldMorph>>doOneCycle
+[
+		| extraWorldsToDraw |
+		extraWorldsToDraw := ExtraWorldListMutex critical: [
+			                     self extraWorldList ].
+		extraWorldsToDraw do: [ :world | world doOneCycle ].
+
+		(self currentWorld isNotNil and: [
+			 (extraWorldsToDraw includes: self currentWorld) not ]) ifTrue: [
+			self currentWorld doOneCycle ] ] in WorldMorph class>>doOneCycle in Block: [...
+FullBlockClosure(BlockClosure)>>ensure:
+WorldState class>>doDrawCycleWith:
+WorldMorph class>>doOneCycle
+MorphicRenderLoop>>doOneCycle
+MorphicRenderLoop>>doOneCycleWhile:
+[ MorphicRenderLoop new doOneCycleWhile: [ true ] ] in MorphicUIManager>>spawnNewProcess in Block: [ MorphicRenderLoop new doOneCycleWhile: [ tru[..]
+[self value.
+			"IMPORTANT: Do not step over next line of code. See method comments for details"
+			Processor terminateRealActive] in FullBlockClosure(BlockClosure)>>newProcess in Block: [self value....
+[0m[31m#at:at: was sent to nil
+[0mUndefinedObject(Object)>>doesNotUnderstand: #at:at:
+UndefinedObject>>doesNotUnderstand: #at:at:
+Tablero>>clickIzquierdo:at:at:
+[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
+Celda>>mouseDown:
+Celda(Morph)>>handleMouseDown:
 MouseButtonEvent>>sentTo:
-SpToolbarButtonMorph(Morph)>>handleEvent:
-SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+Celda(Morph)>>handleEvent:
+Celda(Morph)>>handleFocusEvent:
 [
 		result := focusHolder handleFocusEvent: transformedEvent.
 	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
@@ -233,130 +195,83 @@ HandMorph>>sendFocusEvent:to:clear:
 HandMorph>>sendEvent:focus:clear:
 HandMorph>>sendMouseEvent:
 HandMorph>>handleEvent:
-HandMorph>>processEvents
-[0m[31mArgumentsCountMismatch: This block accepts 0 arguments, but was called with 1 argument.
-[0mFullBlockClosure(BlockClosure)>>numArgsError:
-FullBlockClosure(BlockClosure)>>value:
-OrderedCollection>>do:
-UndefinedObject>>DoIt
-OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
-OpalCompiler>>evaluate
 [
-		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
-		oldBindings := self interactionModel bindings copy.
-		receiver := self interactionModel doItReceiver.
-		result := receiver class compiler
-			source: aString;
-			context: self interactionModel doItContext;
-			receiver: self interactionModel doItReceiver;
-			requestor: self interactionModel;
-			environment: self environment;
-			failBlock:  [ 
-				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
-				^ compileErrorBlock value ];
-			evaluate.
-		oldBindings size = self interactionModel bindings size 
-			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
-		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
-		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-SpCodePresenter>>evaluate:onCompileError:onError:
-StPlaygroundPagePresenter>>doEvaluateAndGo
-StPlaygroundPagePresenter>>doEvaluateAllAndGo
-StPlaygroundDoItCommand>>execute
-SpCommand(CmCommandDecorator)>>execute
-[ specCommand execute ] in [ :specCommand | 
-			aButtonClass new
-				label: specCommand name;
-				help: specCommand description;
-				in: [ :button | 
-					specCommand hasIcon
-						ifTrue: [ button icon: specCommand icon ] ];
-				action: [ specCommand execute ];
-				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
-FullBlockClosure(BlockClosure)>>cull:
-SpMorphicToolbarButtonAdapter>>execute
-SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
-[:m |
-		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
-Array(SequenceableCollection)>>do:
-SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
-SpToolbarButtonMorph(Morph)>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-SpToolbarButtonMorph(Morph)>>handleEvent:
-SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNotNil ]) ifTrue: [
+			morphicWorld activeHand handleEvent: anEvent
+		]
+	] in OSWindowMorphicEventHandler>>dispatchMorphicEvent: in Block: [...
+WorldState>>runStepMethodsIn:
+WorldMorph>>runStepMethods
+WorldState>>doOneCycleFor:
+WorldMorph>>doOneCycleNow
+WorldMorph>>doOneCycle
 [
-		result := focusHolder handleFocusEvent: transformedEvent.
-	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-WorldMorph>>becomeActiveDuring:
-HandMorph>>sendFocusEvent:to:clear:
-HandMorph>>sendEvent:focus:clear:
-HandMorph>>sendMouseEvent:
-[0m[31mArgumentsCountMismatch: This block accepts 0 arguments, but was called with 1 argument.
-[0mFullBlockClosure(BlockClosure)>>numArgsError:
-FullBlockClosure(BlockClosure)>>value:
-OrderedCollection>>do:
-UndefinedObject>>DoIt
-OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
-OpalCompiler>>evaluate
-[
-		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
-		oldBindings := self interactionModel bindings copy.
-		receiver := self interactionModel doItReceiver.
-		result := receiver class compiler
-			source: aString;
-			context: self interactionModel doItContext;
-			receiver: self interactionModel doItReceiver;
-			requestor: self interactionModel;
-			environment: self environment;
-			failBlock:  [ 
-				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
-				^ compileErrorBlock value ];
-			evaluate.
-		oldBindings size = self interactionModel bindings size 
-			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
-		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
-		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-SpCodePresenter>>evaluate:onCompileError:onError:
-StPlaygroundPagePresenter>>doEvaluateAndGo
-StPlaygroundPagePresenter>>doEvaluateAllAndGo
-StPlaygroundDoItCommand>>execute
-SpCommand(CmCommandDecorator)>>execute
-[ specCommand execute ] in [ :specCommand | 
-			aButtonClass new
-				label: specCommand name;
-				help: specCommand description;
-				in: [ :button | 
-					specCommand hasIcon
-						ifTrue: [ button icon: specCommand icon ] ];
-				action: [ specCommand execute ];
-				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
-FullBlockClosure(BlockClosure)>>cull:
-SpMorphicToolbarButtonAdapter>>execute
-SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
-[:m |
-		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
-Array(SequenceableCollection)>>do:
-SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
-SpToolbarButtonMorph(Morph)>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-SpToolbarButtonMorph(Morph)>>handleEvent:
-SpToolbarButtonMorph(Morph)>>handleFocusEvent:
-[
-		result := focusHolder handleFocusEvent: transformedEvent.
-	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-WorldMorph>>becomeActiveDuring:
-HandMorph>>sendFocusEvent:to:clear:
-HandMorph>>sendEvent:focus:clear:
-HandMorph>>sendMouseEvent:
-[0m[31mInstance of Tablero did not understand #instanciaPartida:
-[0mTablero(Object)>>doesNotUnderstand: #instanciaPartida:
-Partida>>nuevaPartida
-Partida>>initialize
-Partida class(Behavior)>>new
+		| extraWorldsToDraw |
+		extraWorldsToDraw := ExtraWorldListMutex critical: [
+			                     self extraWorldList ].
+		extraWorldsToDraw do: [ :world | world doOneCycle ].
+
+		(self currentWorld isNotNil and: [
+			 (extraWorldsToDraw includes: self currentWorld) not ]) ifTrue: [
+			self currentWorld doOneCycle ] ] in WorldMorph class>>doOneCycle in Block: [...
+FullBlockClosure(BlockClosure)>>ensure:
+WorldState class>>doDrawCycleWith:
+WorldMorph class>>doOneCycle
+MorphicRenderLoop>>doOneCycle
+MorphicRenderLoop>>doOneCycleWhile:
+[ MorphicRenderLoop new doOneCycleWhile: [ true ] ] in MorphicUIManager>>spawnNewProcess in Block: [ MorphicRenderLoop new doOneCycleWhile: [ tru[..]
+[self value.
+			"IMPORTANT: Do not step over next line of code. See method comments for details"
+			Processor terminateRealActive] in FullBlockClosure(BlockClosure)>>newProcess in Block: [self value....
+[0mearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+[0m[31mInstance of Tablero did not understand #ponerMina
+[0mTablero(Object)>>doesNotUnderstand: #ponerMina
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+[0m[31mInstance of SmallInteger did not understand #tieneMina
+[0mSmallInteger(Object)>>doesNotUnderstand: #tieneMina
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
 Buscaminas>>initialize
 Buscaminas class(Behavior)>>new
 UndefinedObject>>DoIt
@@ -401,21 +316,19 @@ SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
 [:m |
 		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
 Array(SequenceableCollection)>>do:
-SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
-SpToolbarButtonMorph(Morph)>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-SpToolbarButtonMorph(Morph)>>handleEvent:
-SpToolbarButtonMorph(Morph)>>handleFocusEvent:
-[
-		result := focusHolder handleFocusEvent: transformedEvent.
-	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
-FullBlockClosure(BlockClosure)>>on:do:
-WorldMorph>>becomeActiveDuring:
-[0m[31mInstance of Tablero did not understand #instanciaPartida:
-[0mTablero(Object)>>doesNotUnderstand: #instanciaPartida:
-Partida>>nuevaPartida
-Partida>>initialize
-Partida class(Behavior)>>new
+[0m[31mInstance of SmallInteger did not understand #tieneMina
+[0mSmallInteger(Object)>>doesNotUnderstand: #tieneMina
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
 Buscaminas>>initialize
 Buscaminas class(Behavior)>>new
 UndefinedObject>>DoIt
@@ -460,180 +373,359 @@ SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
 [:m |
 		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
 Array(SequenceableCollection)>>do:
-SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
-SpToolbarButtonMorph(Morph)>>handleMouseUp:
-MouseButtonEvent>>sentTo:
-SpToolbarButtonMorph(Morph)>>handleEvent:
-SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[0m[31mError: Instances of Array2D are not indexable
+[0mArray2D(Object)>>error:
+Array2D(Object)>>errorNotIndexable
+Array2D(Object)>>at:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+[0m[31mError: Instances of Array2D are not indexable
+[0mArray2D(Object)>>error:
+Array2D(Object)>>errorNotIndexable
+Array2D(Object)>>at:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+[0m[31mInstance of Tablero did not understand #tieneMina
+[0mTablero(Object)>>doesNotUnderstand: #tieneMina
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+[0m[31mInstance of Tablero did not understand #tieneMina
+[0mTablero(Object)>>doesNotUnderstand: #tieneMina
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+[0m[31mInstance of Tablero did not understand #tieneMina
+[0mTablero(Object)>>doesNotUnderstand: #tieneMina
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
 [
-		result := focusHolder handleFocusEvent: transformedEvent.
-	] in HandMorph>>sendFocusEvent:to:clear: in Block: [...
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
 FullBlockClosure(BlockClosure)>>on:do:
-WorldMorph>>becomeActiveDuring:
-[0m[31m#nuevaPartida was sent to nil
-[0mUndefinedObject(Object)>>doesNotUnderstand: #nuevaPartida
-UndefinedObject>>doesNotUnderstand: #nuevaPartida
-Tablero>>reiniciar
-Tablero>>derrota
-[ :pos |
-	((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ 
-		self derrota.
-		 ]
-	 ] in Tablero>>clickIzquierdo:at:at: in Block: [ :pos |...
-OrderedCollection>>do:
-Tablero>>clickIzquierdo:at:at:
-[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
-Celda>>mouseDown:
-Celda(Morph)>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-Celda(Morph)>>handleEvent:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-Celda(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-Tablero(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-[0m[31m#nuevaPartida was sent to nil
-[0mUndefinedObject(Object)>>doesNotUnderstand: #nuevaPartida
-UndefinedObject>>doesNotUnderstand: #nuevaPartida
-Tablero>>reiniciar
-Tablero>>derrota
-[ :pos |
-	((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ 
-		self derrota.
-		 ]
-	 ] in Tablero>>clickIzquierdo:at:at: in Block: [ :pos |...
-OrderedCollection>>do:
-Tablero>>clickIzquierdo:at:at:
-[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
-Celda>>mouseDown:
-Celda(Morph)>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-Celda(Morph)>>handleEvent:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-Celda(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-Tablero(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-[0m[31mNonBooleanReceiver: proceed for truth.
-[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
-UndefinedObject(ProtoObject)>>mustBeBoolean
-Tablero>>derrota
-[ :pos |
-	((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ 
-		self derrota.
-		 ]
-	 ] in Tablero>>clickIzquierdo:at:at: in Block: [ :pos |...
-OrderedCollection>>do:
-Tablero>>clickIzquierdo:at:at:
-[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
-Celda>>mouseDown:
-Celda(Morph)>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-Celda(Morph)>>handleEvent:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-Celda(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-Tablero(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-[0m[31mNonBooleanReceiver: proceed for truth.
-[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
-UndefinedObject(ProtoObject)>>mustBeBoolean
-Tablero>>derrota
-[ :pos |
-	((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ 
-		self derrota.
-		 ]
-	 ] in Tablero>>clickIzquierdo:at:at: in Block: [ :pos |...
-OrderedCollection>>do:
-Tablero>>clickIzquierdo:at:at:
-[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
-Celda>>mouseDown:
-Celda(Morph)>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-Celda(Morph)>>handleEvent:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-Celda(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-Tablero(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-[0m[31mNonBooleanReceiver: proceed for truth.
-[0mUndefinedObject(ProtoObject)>>mustBeBooleanIn:
-UndefinedObject(ProtoObject)>>mustBeBoolean
-Tablero>>derrota
-[ :pos |
-	((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ 
-		self derrota.
-		 ]
-	 ] in Tablero>>clickIzquierdo:at:at: in Block: [ :pos |...
-OrderedCollection>>do:
-Tablero>>clickIzquierdo:at:at:
-[ self clickIzquierdo: celda at: i at:j ] in Tablero>>nuevaCelda:at: in Block: [ self clickIzquierdo: celda at: i at:j ]
-Celda>>mouseDown:
-Celda(Morph)>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-Celda(Morph)>>handleEvent:
-MorphicEventDispatcher>>dispatchMouseDown:with:
-MorphicEventDispatcher>>handleMouseDown:
-MouseButtonEvent>>sentTo:
-[ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
-FullBlockClosure(BlockClosure)>>ensure:
-MorphicEventDispatcher>>dispatchEvent:with:
-Celda(Morph)>>processEvent:using:
-MorphicEventDispatcher>>dispatchMouseDown:with:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+[0m[31mInstance of Tablero did not understand #tieneMina
+[0mTablero(Object)>>doesNotUnderstand: #tieneMina
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+[0m[31mInstance of Tablero did not understand #tieneMina
+[0mTablero(Object)>>doesNotUnderstand: #tieneMina
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+[0m[31mInstance of Tablero did not understand #tieneMina
+[0mTablero(Object)>>doesNotUnderstand: #tieneMina
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>mapearMinas:
+Tablero>>crearTablero
+Buscaminas>>initialize
+Buscaminas class(Behavior)>>new
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		receiver := self interactionModel doItReceiver.
+		result := receiver class compiler
+			source: aString;
+			context: self interactionModel doItContext;
+			receiver: self interactionModel doItReceiver;
+			requestor: self interactionModel;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self withAdapterDo: [ :anAdapter | anAdapter refreshStyling ] ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError: in Block: [...
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+			aButtonClass new
+				label: specCommand name;
+				help: specCommand description;
+				in: [ :button | 
+					specCommand hasIcon
+						ifTrue: [ button icon: specCommand icon ] ];
+				action: [ specCommand execute ];
+				yourself ] in SpCommand>>configureAsButtonOfClass: in Block: [ specCommand execute ]
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp: in Block: [:m |...
+Array(SequenceableCollection)>>do:
+[0mntDispatcher>>dispatchMouseDown:with:
 MorphicEventDispatcher>>handleMouseDown:
 MouseButtonEvent>>sentTo:
 [ ^ anEvent sentTo: self ] in MorphicEventDispatcher>>dispatchEvent:with: in Block: [ ^ anEvent sentTo: self ]
