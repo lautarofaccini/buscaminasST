@@ -1,0 +1,55 @@
+OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T20:51:49.694-03:00' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : 'Buscaminas new'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T20:59:15.496-03:00' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : '| minas |\rminas := OrderedCollection new.\r5 timesRepeat: [ :i|\r\tminas:= i .\r\t ].\rminas do: [  ].'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T20:59:40.026-03:00' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : '| minas |\rminas := OrderedCollection new.\r5 timesRepeat: [ :i|\r\tminas:= (i)asInteger .\r\t ].\rminas do: [ \r\tTranscript show: minas.\r\t ].'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T21:00:37.614-03:00' ],
+		#self : OmReference [ '4' ]
+	},
+	#content : '| minas |\rminas := OrderedCollection new.\r5 timesRepeat: [\r\tminas:= (UIManager default request: \'dame algo\')asInteger .\r\t ].\rminas do: [ \r\tTranscript show: minas.\r\t ].'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T21:01:13.622-03:00' ],
+		#self : OmReference [ '5' ]
+	},
+	#content : '| minas |\rminas := OrderedCollection new.\r5 timesRepeat: [\r\tminas addLast: (UIManager default request: \'dame algo\')asInteger .\r\t ].\rminas do: [ \r\tTranscript show: minas.\r\t ].'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T21:03:17.848-03:00' ],
+		#self : OmReference [ '6' ]
+	},
+	#content : '| minas |\rminas := OrderedCollection new.\r5 timesRepeat: [\r\tminas addLast: (UIManager default request: \'dame algo\')asInteger .\r\t ].\rminas do: [ :i |\r\tTranscript show: (i)asInteger.\r\t ].'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T21:24:46.911-03:00' ],
+		#self : OmReference [ '7' ]
+	},
+	#content : 'Buscaminas new'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T21:33:19.091-03:00' ],
+		#self : OmReference [ '8' ]
+	},
+	#content : 'Partida new'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2023-11-15T21:33:38.036-03:00' ],
+		#self : OmReference [ '9' ]
+	},
+	#content : 'Buscaminas new'
+}

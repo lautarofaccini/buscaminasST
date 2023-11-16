@@ -1,0 +1,4022 @@
+OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T20:51:42.224-03:00' ],
+		#prior : OmReference [ 'Pharo11-SNAPSHOT-64bit-0ead11d.2534F9A70640', '115' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda at: i at: j\r| posicion |\rposicion := Array new: 2.\rposicion at: 1 put: i.\rposicion at: 2 put: j.\r(unaCelda tieneBandera) ifTrue: [ \r\t\tunaCelda tieneBandera: false.\r\t\tunaCelda color: Color green.\r\t\tunaCelda onColor: Color green.\r\t\tbanderas remove: posicion.\t\t\r\t\t ] ifFalse: [ \r\t\tunaCelda tieneBandera: true.\r\t\tunaCelda color: Color blue.\t\r\t\tunaCelda onColor: Color blue.\r\t\tbanderas addLast: posicion.\r\t\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 17:00',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickDerecho:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickDerecho: unaCelda at: i at: j\r| posicion |\rposicion := Array new: 2.\rposicion at: 1 put: i.\rposicion at: 2 put: j.\r(unaCelda isOn) ifTrue: [ \r(unaCelda tieneBandera) ifTrue: [ \r\t\tunaCelda tieneBandera: false.\r\t\tunaCelda color: Color green.\r\t\tunaCelda onColor: Color green.\r\t\tbanderas remove: posicion.\t\t\r\t\t ] ifFalse: [ \r\t\tunaCelda tieneBandera: true.\r\t\tunaCelda color: Color blue.\t\r\t\tunaCelda onColor: Color blue.\r\t\tbanderas addLast: posicion.\r\t\t ]\r\t]',
+			#stamp : 'LautaroFaccini 11/15/2023 20:51',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T20:53:23.296-03:00' ],
+		#prior : OmReference [ '1' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j',
+			#stamp : 'LautaroFaccini 11/15/2023 20:53',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T20:53:34.606-03:00' ],
+		#prior : OmReference [ '2' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j',
+			#stamp : 'LautaroFaccini 11/15/2023 20:53',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j',
+			#stamp : 'LautaroFaccini 11/15/2023 20:53',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T20:54:25.502-03:00' ],
+		#prior : OmReference [ '3' ],
+		#self : OmReference [ '4' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j',
+			#stamp : 'LautaroFaccini 11/15/2023 20:53',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff]',
+			#stamp : 'LautaroFaccini 11/15/2023 20:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T20:54:48.79-03:00' ],
+		#prior : OmReference [ '4' ],
+		#self : OmReference [ '5' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda at: i at:j ].\r\tcelda onLeftClick: [  (celda tieneBandera) ifFalse: [celda turnOff]  ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 16:58',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda at: i at:j ].\r\tcelda onLeftClick: [ self clickIzquierdo: celda at: i at:j ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 20:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T20:54:53.099-03:00' ],
+		#prior : OmReference [ '5' ],
+		#self : OmReference [ '6' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda at: i at:j ].\r\tcelda onLeftClick: [ self clickIzquierdo: celda at: i at:j ].\r\t"self verificar: i at: j"\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 20:54',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda at: i at:j ].\r\tcelda onLeftClick: [ self clickIzquierdo: celda at: i at:j ].\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 20:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:14:06.419-03:00' ],
+		#prior : OmReference [ '6' ],
+		#self : OmReference [ '7' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'Perdiste!\' trueChoice:\'New Game\' falseChoice: \'Exit\'  cancelChoice:\'Volver\' default: nil.\r"derrota ifTrue:[ self reiniciar  ] ifFalse: [ derrota = false ifTrue: [ self salir ]  ].\rself bombasRestantes"',
+			#stamp : 'LautaroFaccini 11/15/2023 21:14',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:14:23.029-03:00' ],
+		#prior : OmReference [ '7' ],
+		#self : OmReference [ '8' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'Perdiste!\' trueChoice:\'New Game\' falseChoice: \'Exit\'  cancelChoice:\'Volver\' default: nil.\r"derrota ifTrue:[ self reiniciar  ] ifFalse: [ derrota = false ifTrue: [ self salir ]  ].\rself bombasRestantes"',
+			#stamp : 'LautaroFaccini 11/15/2023 21:14',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'Perdiste!\' trueChoice:\'New Game\' falseChoice: \'Exit\'  cancelChoice:\'Volver\' default: nil.\r"derrota ifTrue:[ self reiniciar  ] ifFalse: [ derrota = false ifTrue: [ self salir ]  ].\rself bombasRestantes"',
+			#stamp : 'LautaroFaccini 11/15/2023 21:14',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:16:13.848-03:00' ],
+		#prior : OmReference [ '8' ],
+		#self : OmReference [ '9' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rpartida:= Partida new.\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/14/2023 19:28',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rpartida:= Partida new.\rpartida jugador: Jugador new.\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:16',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:16:35.551-03:00' ],
+		#prior : OmReference [ '9' ],
+		#self : OmReference [ '10' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'jugador:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'jugador: unJugador\rjugador:= unJugador',
+			#stamp : 'LautaroFaccini 11/15/2023 21:16',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:16:35.554-03:00' ],
+		#prior : OmReference [ '10' ],
+		#self : OmReference [ '11' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'jugador:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'jugador: unJugador\rjugador:= unJugador',
+			#stamp : 'LautaroFaccini 11/15/2023 21:16',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'jugador:',
+			#protocol : #accessing,
+			#sourceCode : 'jugador: unJugador\rjugador:= unJugador',
+			#stamp : 'LautaroFaccini 11/15/2023 21:16',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:18:25.748-03:00' ],
+		#prior : OmReference [ '11' ],
+		#self : OmReference [ '12' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #nuevoJuego,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'nuevoJuego\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:18',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:18:34-03:00' ],
+		#prior : OmReference [ '12' ],
+		#self : OmReference [ '13' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #nuevoJuego,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'nuevoJuego\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:18',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #nuevoJuego,
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevoJuego\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:18',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:18:50.865-03:00' ],
+		#prior : OmReference [ '13' ],
+		#self : OmReference [ '14' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tBuscaminas nuevoJuego\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:18',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:20:40.844-03:00' ],
+		#prior : OmReference [ '14' ],
+		#self : OmReference [ '15' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #nuevoJuego,
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevoJuego\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:18',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #nuevoJuego,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'nuevoJuego\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:18',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:20:40.848-03:00' ],
+		#prior : OmReference [ '15' ],
+		#self : OmReference [ '16' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #nuevoJuego,
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevoJuego\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:18',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:20:40.853-03:00' ],
+		#prior : OmReference [ '16' ],
+		#self : OmReference [ '17' ]
+	},
+	#content : EpProtocolRemoval {
+		#behavior : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Buscaminas\r\tinstanceVariableNames: \'\'\r\tclassVariableNames: \'partida tablero ventana\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Buscaminas,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [ ],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Buscaminas class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Buscaminas class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Buscaminas,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #partida,
+					#parent : @7
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #tablero,
+					#parent : @7
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #ventana,
+					#parent : @7
+				}
+			],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#protocol : #gameLogic
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:22:24.006-03:00' ],
+		#prior : OmReference [ '17' ],
+		#self : OmReference [ '18' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tBuscaminas nuevoJuego\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:18',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tself initialize .\r\tself crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:22',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:22:32.982-03:00' ],
+		#prior : OmReference [ '18' ],
+		#self : OmReference [ '19' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tself initialize .\r\tself crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:22',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tself initialize .\r\tself crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:22',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:23:53.266-03:00' ],
+		#prior : OmReference [ '19' ],
+		#self : OmReference [ '20' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'Perdiste!\' trueChoice:\'New Game\' falseChoice: \'Exit\'  cancelChoice:\'Volver\' default: nil.\r"derrota ifTrue:[ self reiniciar  ] ifFalse: [ derrota = false ifTrue: [ self salir ]  ].\rself bombasRestantes"',
+			#stamp : 'LautaroFaccini 11/15/2023 21:14',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ self reiniciar  ] "ifFalse: [ derrota = false ifTrue: [ self salir ]  ].\rself bombasRestantes"""',
+			#stamp : 'LautaroFaccini 11/15/2023 21:23',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:24:04.716-03:00' ],
+		#prior : OmReference [ '20' ],
+		#self : OmReference [ '21' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff]',
+			#stamp : 'LautaroFaccini 11/15/2023 20:54',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'clickIzquierdo:at:at:',
+			#protocol : #'event handling',
+			#sourceCode : 'clickIzquierdo: unaCelda at: i at: j\r(unaCelda tieneBandera) ifFalse: [unaCelda turnOff].\rminas do: [ :pos |\r\t((pos at: 1) = i) & ((pos at: 2) = j) ifTrue: [ \r\t\tself derrota.\r\t\t ]\r\t ].',
+			#stamp : 'LautaroFaccini 11/15/2023 21:24',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:24:35.575-03:00' ],
+		#prior : OmReference [ '21' ],
+		#self : OmReference [ '22' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \r|opcion|\ropcion := nil.\rjugador:=Jugador new.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.',
+			#stamp : 'LautaroFaccini 11/14/2023 18:27',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:24',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:27:43.699-03:00' ],
+		#prior : OmReference [ '22' ],
+		#self : OmReference [ '23' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #initialization,
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:27',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:27:49.217-03:00' ],
+		#prior : OmReference [ '23' ],
+		#self : OmReference [ '24' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:24',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'initialize \r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:24',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:27:49.259-03:00' ],
+		#prior : OmReference [ '24' ],
+		#self : OmReference [ '25' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:24',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:28:08.681-03:00' ],
+		#prior : OmReference [ '25' ],
+		#self : OmReference [ '26' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rpartida:= Partida new.\rpartida jugador: Jugador new.\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:16',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rpartida:= Partida new.\rpartida jugador: Jugador new.\rpartida nuevaPartida.\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:28',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:30:25.235-03:00' ],
+		#prior : OmReference [ '26' ],
+		#self : OmReference [ '27' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rself jugador: Jugador new.\rself nuevaPartida.\r',
+			#stamp : 'LautaroFaccini 11/15/2023 21:30',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:30:44.572-03:00' ],
+		#prior : OmReference [ '27' ],
+		#self : OmReference [ '28' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Buscaminas\r\tinstanceVariableNames: \'\'\r\tclassVariableNames: \'partida tablero ventana\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Buscaminas,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [ ],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Buscaminas class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Buscaminas class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Buscaminas,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #partida,
+					#parent : @7
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #tablero,
+					#parent : @7
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #ventana,
+					#parent : @7
+				}
+			],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Buscaminas\r\tinstanceVariableNames: \'\'\r\tclassVariableNames: \'partida\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Buscaminas,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [ ],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Buscaminas class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Buscaminas class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @27
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Buscaminas,
+					#isMetaSide : false
+				},
+				#parent : @27,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #partida,
+					#parent : @27
+				}
+			],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:31:00.984-03:00' ],
+		#prior : OmReference [ '28' ],
+		#self : OmReference [ '29' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rpartida:= Partida new.\rpartida jugador: Jugador new.\rpartida nuevaPartida.\rtablero:= Tablero new .\rtablero dificultad:partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:28',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rpartida:= Partida new.\r',
+			#stamp : 'LautaroFaccini 11/15/2023 21:31',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:31:28.23-03:00' ],
+		#prior : OmReference [ '29' ],
+		#self : OmReference [ '30' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Partida\r\tinstanceVariableNames: \'jugador dificultad dimension\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Partida,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #jugador,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dimension,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Partida class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Partida class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Partida,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Partida\r\tinstanceVariableNames: \'jugador dificultad dimension ventana tablero\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Partida,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #jugador,
+					#parent : @27
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @27
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dimension,
+					#parent : @27
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #ventana,
+					#parent : @27
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #tablero,
+					#parent : @27
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Partida class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Partida class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @27
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Partida,
+					#isMetaSide : false
+				},
+				#parent : @27,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:32:09.181-03:00' ],
+		#prior : OmReference [ '30' ],
+		#self : OmReference [ '31' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #initialization,
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:27',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #initialization,
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.\rtablero:= Tablero new.\rtablero dificultad: dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:32',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:33:12.148-03:00' ],
+		#prior : OmReference [ '31' ],
+		#self : OmReference [ '32' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tself initialize .\r\tself crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:22',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tPartida new.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:33',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:33:48.985-03:00' ],
+		#prior : OmReference [ '32' ],
+		#self : OmReference [ '33' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tPartida new.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:33',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tPartida nuevaPartida.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:33',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:34:39.592-03:00' ],
+		#prior : OmReference [ '33' ],
+		#self : OmReference [ '34' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Buscaminas\r\tinstanceVariableNames: \'\'\r\tclassVariableNames: \'partida\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Buscaminas,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [ ],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Buscaminas class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Buscaminas class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Buscaminas,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #partida,
+					#parent : @7
+				}
+			],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Buscaminas\r\tinstanceVariableNames: \'partida\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Buscaminas,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #partida,
+					#parent : @23
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Buscaminas class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Buscaminas class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @23
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Buscaminas,
+					#isMetaSide : false
+				},
+				#parent : @23,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:36:18.306-03:00' ],
+		#prior : OmReference [ '34' ],
+		#self : OmReference [ '35' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Partida\r\tinstanceVariableNames: \'jugador dificultad dimension ventana tablero\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Partida,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #jugador,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dimension,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #ventana,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #tablero,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Partida class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Partida class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Partida,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Partida\r\tinstanceVariableNames: \'instanciaPartida jugador dificultad dimension ventana tablero\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Partida,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #instanciaPartida,
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #jugador,
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dimension,
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #ventana,
+					#parent : @31
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #tablero,
+					#parent : @31
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Partida class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Partida class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @31
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Partida,
+					#isMetaSide : false
+				},
+				#parent : @31,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:36:42.829-03:00' ],
+		#prior : OmReference [ '35' ],
+		#self : OmReference [ '36' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rpartida:= Partida new.\r',
+			#stamp : 'LautaroFaccini 11/15/2023 21:31',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rpartida:= Partida new.\rpartida instanciaPartida: partida.\r',
+			#stamp : 'LautaroFaccini 11/15/2023 21:36',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:36:49.805-03:00' ],
+		#prior : OmReference [ '36' ],
+		#self : OmReference [ '37' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'instanciaPartida:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'instanciaPartida: unaPartida\rinstanciaPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:36',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:36:49.809-03:00' ],
+		#prior : OmReference [ '37' ],
+		#self : OmReference [ '38' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'instanciaPartida:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'instanciaPartida: unaPartida\rinstanciaPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:36',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'instanciaPartida:',
+			#protocol : #accessing,
+			#sourceCode : 'instanciaPartida: unaPartida\rinstanciaPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:36',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:37:07.407-03:00' ],
+		#prior : OmReference [ '38' ],
+		#self : OmReference [ '39' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #instanciaPartida,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'instanciaPartida\r\t^instanciaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:37',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:37:07.41-03:00' ],
+		#prior : OmReference [ '39' ],
+		#self : OmReference [ '40' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #instanciaPartida,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'instanciaPartida\r\t^instanciaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:37',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #instanciaPartida,
+			#protocol : #accessing,
+			#sourceCode : 'instanciaPartida\r\t^instanciaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:37',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:38:53.243-03:00' ],
+		#prior : OmReference [ '40' ],
+		#self : OmReference [ '41' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tPartida nuevaPartida.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:33',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tself instanciaPartida nuevaPartida.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:38',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:38:55.056-03:00' ],
+		#prior : OmReference [ '41' ],
+		#self : OmReference [ '42' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'dificultad tamaño cantMinas celdas minas banderas\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #banderas,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'instanciaPartida dificultad tamaño cantMinas celdas minas banderas\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #instanciaPartida,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #banderas,
+					#parent : @33
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @33
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @33,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:39:54.208-03:00' ],
+		#prior : OmReference [ '42' ],
+		#self : OmReference [ '43' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #initialization,
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.\rtablero:= Tablero new.\rtablero dificultad: dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:32',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #initialization,
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.\rtablero:= Tablero new.\rtablero dificultad: dificultad.\rtablero instanciaPartida: instanciaPartida.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:39',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:40:13.718-03:00' ],
+		#prior : OmReference [ '43' ],
+		#self : OmReference [ '44' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'instanciaPartida dificultad tamaño cantMinas celdas minas banderas\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #instanciaPartida,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #banderas,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'insPartida dificultad tamaño cantMinas celdas minas banderas\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #insPartida,
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #banderas,
+					#parent : @35
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @35
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @35,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:40:17.362-03:00' ],
+		#prior : OmReference [ '44' ],
+		#self : OmReference [ '45' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tself instanciaPartida nuevaPartida.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:38',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tself insPartida nuevaPartida.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:40',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:41:26.728-03:00' ],
+		#prior : OmReference [ '45' ],
+		#self : OmReference [ '46' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tself insPartida nuevaPartida.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:40',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tinsPartida nuevaPartida.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:41',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:42:00.156-03:00' ],
+		#prior : OmReference [ '46' ],
+		#self : OmReference [ '47' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #initialization,
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.\rtablero:= Tablero new.\rtablero dificultad: dificultad.\rtablero instanciaPartida: instanciaPartida.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:39',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #initialization,
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.\rtablero:= Tablero new.\rtablero dificultad: dificultad.\rtablero insPartida: instanciaPartida.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:42:22.903-03:00' ],
+		#prior : OmReference [ '47' ],
+		#self : OmReference [ '48' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'insPartida:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'insPartida: unaPartida\rinsPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:42:22.909-03:00' ],
+		#prior : OmReference [ '48' ],
+		#self : OmReference [ '49' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'insPartida:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'insPartida: unaPartida\rinsPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'insPartida:',
+			#protocol : #accessing,
+			#sourceCode : 'insPartida: unaPartida\rinsPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:46:08.786-03:00' ],
+		#prior : OmReference [ '49' ],
+		#self : OmReference [ '50' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rself jugador: Jugador new.\rself nuevaPartida.\r',
+			#stamp : 'LautaroFaccini 11/15/2023 21:30',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.\r',
+			#stamp : 'LautaroFaccini 11/15/2023 21:46',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:49:09.139-03:00' ],
+		#prior : OmReference [ '50' ],
+		#self : OmReference [ '51' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Partida\r\tinstanceVariableNames: \'instanciaPartida jugador dificultad dimension ventana tablero\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Partida,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #instanciaPartida,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #jugador,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dimension,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #ventana,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #tablero,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Partida class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Partida class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Partida,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Partida\r\tinstanceVariableNames: \'instanciaPartida jugador dificultad dimension\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Partida,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #instanciaPartida,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #jugador,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @33
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dimension,
+					#parent : @33
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Partida class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Partida class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @33
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Partida,
+					#isMetaSide : false
+				},
+				#parent : @33,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:49:25.402-03:00' ],
+		#prior : OmReference [ '51' ],
+		#self : OmReference [ '52' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Buscaminas\r\tinstanceVariableNames: \'partida\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Buscaminas,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #partida,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Buscaminas class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Buscaminas class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Buscaminas,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Buscaminas\r\tinstanceVariableNames: \'\'\r\tclassVariableNames: \'partida tablero ventana\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Buscaminas,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [ ],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Buscaminas class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Buscaminas class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @23
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Buscaminas,
+					#isMetaSide : false
+				},
+				#parent : @23,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #partida,
+					#parent : @23
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #tablero,
+					#parent : @23
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #ventana,
+					#parent : @23
+				}
+			],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:49:38.293-03:00' ],
+		#prior : OmReference [ '52' ],
+		#self : OmReference [ '53' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rpartida:= Partida new.\rpartida instanciaPartida: partida.\r',
+			#stamp : 'LautaroFaccini 11/15/2023 21:36',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \r| jugador |\rjugador:= Jugador new.\rpartida:= Partida new.\rpartida jugador: jugador.\rtablero:= Tablero new.\rtablero dificultad: partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:49',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:49:47.862-03:00' ],
+		#prior : OmReference [ '53' ],
+		#self : OmReference [ '54' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #instanciaPartida,
+			#protocol : #accessing,
+			#sourceCode : 'instanciaPartida\r\t^instanciaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:37',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #instanciaPartida,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'instanciaPartida\r\t^instanciaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:37',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:49:47.907-03:00' ],
+		#prior : OmReference [ '54' ],
+		#self : OmReference [ '55' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #instanciaPartida,
+			#protocol : #accessing,
+			#sourceCode : 'instanciaPartida\r\t^instanciaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:37',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:49:50.36-03:00' ],
+		#prior : OmReference [ '55' ],
+		#self : OmReference [ '56' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'instanciaPartida:',
+			#protocol : #accessing,
+			#sourceCode : 'instanciaPartida: unaPartida\rinstanciaPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:36',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'instanciaPartida:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'instanciaPartida: unaPartida\rinstanciaPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:36',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:49:50.363-03:00' ],
+		#prior : OmReference [ '56' ],
+		#self : OmReference [ '57' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'instanciaPartida:',
+			#protocol : #accessing,
+			#sourceCode : 'instanciaPartida: unaPartida\rinstanciaPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:36',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:50:01.295-03:00' ],
+		#prior : OmReference [ '57' ],
+		#self : OmReference [ '58' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #initialization,
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.\rtablero:= Tablero new.\rtablero dificultad: dificultad.\rtablero insPartida: instanciaPartida.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.\rtablero:= Tablero new.\rtablero dificultad: dificultad.\rtablero insPartida: instanciaPartida.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:50:01.372-03:00' ],
+		#prior : OmReference [ '58' ],
+		#self : OmReference [ '59' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #nuevaPartida,
+			#protocol : #initialization,
+			#sourceCode : 'nuevaPartida\r|opcion|\ropcion := nil.\r[ opcion isNil  ]whileTrue:[\ropcion  := (UIManager default chooseFrom: #(\'Facil\' \'Medio\' \'Dificil\') values: #(1 2 3) lines: #(1 2 3) message:\'Seleccione la dificultad: \' title:\'Buscaminas\')].\rself dificultad: opcion.\rtablero:= Tablero new.\rtablero dificultad: dificultad.\rtablero insPartida: instanciaPartida.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:50:07.547-03:00' ],
+		#prior : OmReference [ '59' ],
+		#self : OmReference [ '60' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Partida\r\tinstanceVariableNames: \'instanciaPartida jugador dificultad dimension\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Partida,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #instanciaPartida,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #jugador,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dimension,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Partida class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Partida class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Partida,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Partida\r\tinstanceVariableNames: \'jugador dificultad dimension\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Partida,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #jugador,
+					#parent : @29
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @29
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Partida,
+						#isMetaSide : false
+					},
+					#name : #dimension,
+					#parent : @29
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Partida class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Partida class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @29
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Partida,
+					#isMetaSide : false
+				},
+				#parent : @29,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:50:17.389-03:00' ],
+		#prior : OmReference [ '60' ],
+		#self : OmReference [ '61' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'insPartida:',
+			#protocol : #accessing,
+			#sourceCode : 'insPartida: unaPartida\rinsPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'insPartida:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'insPartida: unaPartida\rinsPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:50:17.44-03:00' ],
+		#prior : OmReference [ '61' ],
+		#self : OmReference [ '62' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'insPartida:',
+			#protocol : #accessing,
+			#sourceCode : 'insPartida: unaPartida\rinsPartida:= unaPartida',
+			#stamp : 'LautaroFaccini 11/15/2023 21:42',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:50:21.32-03:00' ],
+		#prior : OmReference [ '62' ],
+		#self : OmReference [ '63' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'insPartida dificultad tamaño cantMinas celdas minas banderas\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #insPartida,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @7
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #banderas,
+					#parent : @7
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'BorderedMorph',
+				#definitionSource : 'BorderedMorph subclass: #Tablero\r\tinstanceVariableNames: \'dificultad tamaño cantMinas celdas minas banderas\'\r\tclassVariableNames: \'\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Tablero,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #dificultad,
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #'tamaño',
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #cantMinas,
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #celdas,
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #minas,
+					#parent : @35
+				},
+				RGInstanceVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Tablero,
+						#isMetaSide : false
+					},
+					#name : #banderas,
+					#parent : @35
+				}
+			],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Tablero class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Tablero class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @35
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Tablero,
+					#isMetaSide : false
+				},
+				#parent : @35,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:50:28.869-03:00' ],
+		#prior : OmReference [ '63' ],
+		#self : OmReference [ '64' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tinsPartida nuevaPartida.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:41',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tBuscaminas new.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:50',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:52:52.459-03:00' ],
+		#prior : OmReference [ '64' ],
+		#self : OmReference [ '65' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #salir,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'salir\rself delete',
+			#stamp : 'LautaroFaccini 11/15/2023 21:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:53:02.35-03:00' ],
+		#prior : OmReference [ '65' ],
+		#self : OmReference [ '66' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #salir,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'salir\rself delete',
+			#stamp : 'LautaroFaccini 11/15/2023 21:52',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #salir,
+			#protocol : #gameLogic,
+			#sourceCode : 'salir\rself delete',
+			#stamp : 'LautaroFaccini 11/15/2023 21:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:53:19.77-03:00' ],
+		#prior : OmReference [ '66' ],
+		#self : OmReference [ '67' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ self reiniciar  ] "ifFalse: [ derrota = false ifTrue: [ self salir ]  ].\rself bombasRestantes"""',
+			#stamp : 'LautaroFaccini 11/15/2023 21:23',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ self reiniciar  ] ifFalse: [ derrota ifTrue: [ self salir ]  ].',
+			#stamp : 'LautaroFaccini 11/15/2023 21:53',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:54:18.098-03:00' ],
+		#prior : OmReference [ '67' ],
+		#self : OmReference [ '68' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ self reiniciar  ] ifFalse: [ derrota ifTrue: [ self salir ]  ].',
+			#stamp : 'LautaroFaccini 11/15/2023 21:53',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ self reiniciar  ] ifFalse: [ self salir ].',
+			#stamp : 'LautaroFaccini 11/15/2023 21:54',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:56:43.873-03:00' ],
+		#prior : OmReference [ '68' ],
+		#self : OmReference [ '69' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #salir,
+			#protocol : #gameLogic,
+			#sourceCode : 'salir\rself delete',
+			#stamp : 'LautaroFaccini 11/15/2023 21:52',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #salir,
+			#protocol : #finalization,
+			#sourceCode : 'salir\rself delete',
+			#stamp : 'LautaroFaccini 11/15/2023 21:52',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:56:49.801-03:00' ],
+		#prior : OmReference [ '69' ],
+		#self : OmReference [ '70' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #salir,
+			#protocol : #finalization,
+			#sourceCode : 'salir\rself delete',
+			#stamp : 'LautaroFaccini 11/15/2023 21:52',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #salir,
+			#protocol : #finalization,
+			#sourceCode : 'salir\r^self delete',
+			#stamp : 'LautaroFaccini 11/15/2023 21:56',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T21:57:03.729-03:00' ],
+		#prior : OmReference [ '70' ],
+		#self : OmReference [ '71' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #salir,
+			#protocol : #finalization,
+			#sourceCode : 'salir\r^self delete',
+			#stamp : 'LautaroFaccini 11/15/2023 21:56',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #salir,
+			#protocol : #finalization,
+			#sourceCode : 'salir\rself delete',
+			#stamp : 'LautaroFaccini 11/15/2023 21:57',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:02:03.242-03:00' ],
+		#prior : OmReference [ '71' ],
+		#self : OmReference [ '72' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'Buscaminas class',
+				#isMetaSide : true
+			},
+			#name : #terminarJuego,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'terminarJuego\r\ttablero cerrar.\r\tventana close.',
+			#stamp : 'LautaroFaccini 11/15/2023 22:02',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:02:13.436-03:00' ],
+		#prior : OmReference [ '72' ],
+		#self : OmReference [ '73' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'Buscaminas class',
+				#isMetaSide : true
+			},
+			#name : #terminarJuego,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'terminarJuego\r\ttablero cerrar.\r\tventana close.',
+			#stamp : 'LautaroFaccini 11/15/2023 22:02',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'Buscaminas class',
+				#isMetaSide : true
+			},
+			#name : #terminarJuego,
+			#protocol : #finalization,
+			#sourceCode : 'terminarJuego\r\ttablero cerrar.\r\tventana close.',
+			#stamp : 'LautaroFaccini 11/15/2023 22:02',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:03:12.206-03:00' ],
+		#prior : OmReference [ '73' ],
+		#self : OmReference [ '74' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'Buscaminas class',
+				#isMetaSide : true
+			},
+			#name : #terminarJuego,
+			#protocol : #finalization,
+			#sourceCode : 'terminarJuego\r\ttablero cerrar.\r\tventana close.',
+			#stamp : 'LautaroFaccini 11/15/2023 22:02',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'Buscaminas class',
+				#isMetaSide : true
+			},
+			#name : #terminarJuego,
+			#protocol : #finalization,
+			#sourceCode : 'terminarJuego\r\ttablero salir.\r\tventana close.',
+			#stamp : 'LautaroFaccini 11/15/2023 22:03',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:03:54.175-03:00' ],
+		#prior : OmReference [ '74' ],
+		#self : OmReference [ '75' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ self reiniciar  ] ifFalse: [ self salir ].',
+			#stamp : 'LautaroFaccini 11/15/2023 21:54',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ self reiniciar  ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:03',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:04:41.682-03:00' ],
+		#prior : OmReference [ '75' ],
+		#self : OmReference [ '76' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ self reiniciar  ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:03',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ Buscaminas reiniciar  ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:04',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:04:52.928-03:00' ],
+		#prior : OmReference [ '76' ],
+		#self : OmReference [ '77' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tBuscaminas new.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:50',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tBuscaminas new.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:50',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:04:52.973-03:00' ],
+		#prior : OmReference [ '77' ],
+		#self : OmReference [ '78' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #reiniciar,
+			#protocol : #gameLogic,
+			#sourceCode : 'reiniciar "Nuevo juego"\r\tself delete.\r\tBuscaminas new.\r\t',
+			#stamp : 'LautaroFaccini 11/15/2023 21:50',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:06:26.222-03:00' ],
+		#prior : OmReference [ '78' ],
+		#self : OmReference [ '79' ]
+	},
+	#content : EpClassModification {
+		#oldClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Buscaminas\r\tinstanceVariableNames: \'\'\r\tclassVariableNames: \'partida tablero ventana\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Buscaminas,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [ ],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Buscaminas class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Buscaminas class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Buscaminas,
+					#isMetaSide : false
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #partida,
+					#parent : @7
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #tablero,
+					#parent : @7
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #ventana,
+					#parent : @7
+				}
+			],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		},
+		#newClass : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object',
+				#definitionSource : 'Object subclass: #Buscaminas\r\tinstanceVariableNames: \'\'\r\tclassVariableNames: \'jugador partida tablero ventana\'\r\tpackage: \'Buscaminas\''
+			},
+			#name : #Buscaminas,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [ ],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#traitCompositionSource : '{}',
+					#definitionSource : 'Buscaminas class\r\tinstanceVariableNames: \'\''
+				},
+				#name : #'Buscaminas class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @27
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#className : #Buscaminas,
+					#isMetaSide : false
+				},
+				#parent : @27,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #jugador,
+					#parent : @27
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #partida,
+					#parent : @27
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #tablero,
+					#parent : @27
+				},
+				RGClassVariableDefinition {
+					#annotations : IdentityDictionary {
+						#className : #Buscaminas,
+						#isMetaSide : false
+					},
+					#name : #ventana,
+					#parent : @27
+				}
+			],
+			#category : #Buscaminas,
+			#package : #Buscaminas,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:07:07.621-03:00' ],
+		#prior : OmReference [ '79' ],
+		#self : OmReference [ '80' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'jugador:',
+			#protocol : #accessing,
+			#sourceCode : 'jugador: unJugador\rjugador:= unJugador',
+			#stamp : 'LautaroFaccini 11/15/2023 21:16',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'jugador:',
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'jugador: unJugador\rjugador:= unJugador',
+			#stamp : 'LautaroFaccini 11/15/2023 21:16',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:07:07.665-03:00' ],
+		#prior : OmReference [ '80' ],
+		#self : OmReference [ '81' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #'jugador:',
+			#protocol : #accessing,
+			#sourceCode : 'jugador: unJugador\rjugador:= unJugador',
+			#stamp : 'LautaroFaccini 11/15/2023 21:16',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:07:10.633-03:00' ],
+		#prior : OmReference [ '81' ],
+		#self : OmReference [ '82' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #jugador,
+			#protocol : #accessing,
+			#sourceCode : 'jugador\r\t^ jugador',
+			#stamp : 'LautaroFaccini 11/14/2023 16:10',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #jugador,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'jugador\r\t^ jugador',
+			#stamp : 'LautaroFaccini 11/14/2023 16:10',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:07:10.637-03:00' ],
+		#prior : OmReference [ '82' ],
+		#self : OmReference [ '83' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Partida,
+				#isMetaSide : false
+			},
+			#name : #jugador,
+			#protocol : #accessing,
+			#sourceCode : 'jugador\r\t^ jugador',
+			#stamp : 'LautaroFaccini 11/14/2023 16:10',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:07:23.897-03:00' ],
+		#prior : OmReference [ '83' ],
+		#self : OmReference [ '84' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \r| jugador |\rjugador:= Jugador new.\rpartida:= Partida new.\rpartida jugador: jugador.\rtablero:= Tablero new.\rtablero dificultad: partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 21:49',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Buscaminas,
+				#isMetaSide : false
+			},
+			#name : #initialize,
+			#protocol : #initialization,
+			#sourceCode : 'initialize \rjugador:= Jugador new.\rpartida:= Partida new.\rtablero:= Tablero new.\rtablero dificultad: partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 22:07',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:07:47.492-03:00' ],
+		#prior : OmReference [ '84' ],
+		#self : OmReference [ '85' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'Buscaminas class',
+				#isMetaSide : true
+			},
+			#name : #reiniciar,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'reiniciar \rtablero salir.\rventana close.\rpartida:= Partida new.\rtablero:= Tablero new.\rtablero dificultad: partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 22:07',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:08:20.691-03:00' ],
+		#prior : OmReference [ '85' ],
+		#self : OmReference [ '86' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'Buscaminas class',
+				#isMetaSide : true
+			},
+			#name : #reiniciar,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'reiniciar \rtablero salir.\rventana close.\rpartida:= Partida new.\rtablero:= Tablero new.\rtablero dificultad: partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 22:07',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #'Buscaminas class',
+				#isMetaSide : true
+			},
+			#name : #reiniciar,
+			#protocol : #initialization,
+			#sourceCode : 'reiniciar \rtablero salir.\rventana close.\rpartida:= Partida new.\rtablero:= Tablero new.\rtablero dificultad: partida dificultad.\rventana:=tablero crearTablero openInHand openInWindow setLabel:\'Buscaminas\'.',
+			#stamp : 'LautaroFaccini 11/15/2023 22:07',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:08:43.09-03:00' ],
+		#prior : OmReference [ '86' ],
+		#self : OmReference [ '87' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ Buscaminas reiniciar  ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:04',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ Buscaminas reiniciar ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:08',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:22:54.357-03:00' ],
+		#prior : OmReference [ '87' ],
+		#self : OmReference [ '88' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mostrarBombas,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mostrarBombas\r',
+			#stamp : 'LautaroFaccini 11/15/2023 22:22',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:23:00.864-03:00' ],
+		#prior : OmReference [ '88' ],
+		#self : OmReference [ '89' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mostrarBombas,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mostrarBombas\r',
+			#stamp : 'LautaroFaccini 11/15/2023 22:22',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mostrarBombas,
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarBombas\r',
+			#stamp : 'LautaroFaccini 11/15/2023 22:22',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:23:17.464-03:00' ],
+		#prior : OmReference [ '89' ],
+		#self : OmReference [ '90' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ Buscaminas reiniciar ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:08',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rself mostrarBombas.\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ Buscaminas reiniciar ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:23',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:25:14.956-03:00' ],
+		#prior : OmReference [ '90' ],
+		#self : OmReference [ '91' ]
+	},
+	#content : EpMethodAddition {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mostrarMinas,
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarMinas\r"Que vaya mostrando bombas de forma progresiva"\r"(celdas at:  Variable or expression expected ->"',
+			#stamp : 'LautaroFaccini 11/15/2023 22:25',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:25:19.829-03:00' ],
+		#prior : OmReference [ '91' ],
+		#self : OmReference [ '92' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mostrarBombas,
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarBombas\r',
+			#stamp : 'LautaroFaccini 11/15/2023 22:22',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mostrarBombas,
+			#protocol : #'as yet unclassified',
+			#sourceCode : 'mostrarBombas\r',
+			#stamp : 'LautaroFaccini 11/15/2023 22:22',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:25:19.833-03:00' ],
+		#prior : OmReference [ '92' ],
+		#self : OmReference [ '93' ]
+	},
+	#content : EpMethodRemoval {
+		#method : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mostrarBombas,
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarBombas\r',
+			#stamp : 'LautaroFaccini 11/15/2023 22:22',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:25:32.819-03:00' ],
+		#prior : OmReference [ '93' ],
+		#self : OmReference [ '94' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rself mostrarBombas.\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ Buscaminas reiniciar ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:23',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #derrota,
+			#protocol : #gameLogic,
+			#sourceCode : 'derrota\r|derrota|\rself mostrarMinas.\rderrota:=UIManager default confirm:\'Tiempo: \' label:\'¡Kaboom!\' trueChoice:\'Nuevo Juego\' falseChoice: \'Salir\'  cancelChoice:\'Volver\' default: nil.\rderrota ifTrue:[ Buscaminas reiniciar ] ifFalse: [ Buscaminas terminarJuego ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:25',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:27:06.351-03:00' ],
+		#prior : OmReference [ '94' ],
+		#self : OmReference [ '95' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mostrarMinas,
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarMinas\r"Que vaya mostrando bombas de forma progresiva"\r"(celdas at:  Variable or expression expected ->"',
+			#stamp : 'LautaroFaccini 11/15/2023 22:25',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #mostrarMinas,
+			#protocol : #gameLogic,
+			#sourceCode : 'mostrarMinas\r"Que vaya mostrando bombas de forma progresiva"\rminas do: [:i | \r\t(celdas at: (i at: 1) at: (i at: 2)) turnOff.\r\t ]\r',
+			#stamp : 'LautaroFaccini 11/15/2023 22:27',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:27:52.904-03:00' ],
+		#prior : OmReference [ '95' ],
+		#self : OmReference [ '96' ]
+	},
+	#content : EpMethodModification {
+		#oldMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda at: i at:j ].\r\tcelda onLeftClick: [ self clickIzquierdo: celda at: i at:j ].\r\t^celda',
+			#stamp : 'LautaroFaccini 11/15/2023 20:54',
+			#package : #Buscaminas
+		},
+		#newMethod : RGMethodDefinition {
+			#annotations : IdentityDictionary {
+				#className : #Tablero,
+				#isMetaSide : false
+			},
+			#name : #'nuevaCelda:at:',
+			#protocol : #gameLogic,
+			#sourceCode : 'nuevaCelda: i at: j\r"Instanciamos una celda y le asignamos una posicion en nuestro arreglo "\r\t| celda origen |\r\tcelda := Celda new.\r\torigen := self innerBounds origin.\r\tself addMorph: celda.\r\tcelda position: ((i - 1) * celda width) @ ((j - 1) * celda height) + origen.\r\tcelda onRightClick: [ self clickDerecho: celda at: i at:j ].\r\tcelda onLeftClick: [ self clickIzquierdo: celda at: i at:j ].',
+			#stamp : 'LautaroFaccini 11/15/2023 22:27',
+			#package : #Buscaminas
+		}
+	}
+}OmEntry {
+	#tags : {
+		#author : 'LautaroFaccini',
+		#time : DateAndTime [ '2023-11-15T22:30:03.09-03:00' ],
+		#prior : OmReference [ '96' ],
+		#self : OmReference [ '97' ]
+	},
+	#content : EpSessionSnapshot {
+		#imageName : 'C:\\Users\\Usuario\\Documents\\Pharo\\images\\Buscaminas\\Buscaminas.image'
+	}
+}
